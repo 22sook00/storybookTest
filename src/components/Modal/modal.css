@@ -1,0 +1,101 @@
+@keyframes showModalBg {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes showModalBox {
+  from {
+    opacity: 0;
+    margin-top: -30px;
+  }
+
+  to {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: showModalBg 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal-container {
+  padding: 40px 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 8px;
+  animation: showModalBox 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.modal-content-box {
+  text-align: center;
+  margin: 0 0 15px;
+}
+
+.modal-container > header > nav {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+
+  /* box-shadow:var(--primary-shadow); */
+  box-sizing: border-box;
+  padding: 0 40px;
+}
+.modal-container > header > p {
+  padding: 0 40px;
+  font-size: 14px;
+}
+@media screen and (max-width: 767px) {
+  .modal-background {
+    display: unset;
+  }
+  .modal-container {
+    width: 100%;
+    max-width: unset;
+    border-radius: unset;
+    height: 100vh;
+  }
+}
+.card-modal-container {
+  padding: 40px 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 8px;
+  animation: showModalBox 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.icon {
+  width: 80px;
+  height: 80px;
+  color: rgb(255, 190, 87);
+}
