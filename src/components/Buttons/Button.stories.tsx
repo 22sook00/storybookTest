@@ -121,15 +121,18 @@ export const disabled = () => {
   return (
     <div className="flex flex-col gap-4">
       <section>
-        <Button disabled>PRIMARY</Button>
+        <Button disabled size="small" theme="primary">
+          {" "}
+          PRIMARY
+        </Button>
       </section>
       <section>
-        <Button disabled theme="secondary">
+        <Button disabled size="small" theme="secondary">
           SECONDARY
         </Button>
       </section>
       <section>
-        <Button disabled theme="tertiary">
+        <Button disabled size="small" theme="tertiary">
           TERTIARY
         </Button>
       </section>

@@ -1,10 +1,9 @@
 import React, { FC, SetStateAction } from "react";
-import "./input.css";
 
 interface InputProps {
   value: string;
   setValue: React.Dispatch<SetStateAction<string>>;
-  name: string;
+  name?: string;
   placeholder?: string;
   type?: string;
   onKeyPress?: () => void;

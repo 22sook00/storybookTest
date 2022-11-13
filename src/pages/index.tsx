@@ -1,17 +1,16 @@
-import Head from "next/head";
-import Image from "next/image";
-import Button from "../components/Buttons/Button";
-import styles from "../styles/Home.module.css";
+import React from "react";
+import Layout from "../components/Layout/Laytout";
+import PostList from "../components/PostList/PostList";
+//import "../styles/globals.css";
 
-export default function Home() {
+const Main = () => {
   return (
-    <main className="default-laytout">
-      <Button size="small" theme="primary">
-        TEST
-      </Button>
-      <Button customStyle="w-[180px] h-[48px] bg-pink-200 text-pink-600 opacity-90">
-        TEST
-      </Button>
-    </main>
+    <>
+      <Layout>
+        <PostList />
+      </Layout>
+    </>
   );
-}
+};
+
+export default Main;

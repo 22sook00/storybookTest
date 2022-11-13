@@ -1,0 +1,35 @@
+.nav-container {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: "0 1px 2px 0 rgb(0 0 0 / 0.05)";
+}
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.nav-button-wrapper {
+  display: flex;
+  gap: 10px;
+}
+h2 {
+  text-transform: capitalize;
+}
+@media (max-width: 1239px) {
+  .nav-wrapper {
+    margin: 0 20px;
+  }
+}
+.logged-in-box {
+  height: fit-content;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}

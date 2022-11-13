@@ -11,6 +11,21 @@ module.exports = {
 			animation: {
         'spin-slow': 'spin 5s ease infinite',
       },
+			keyframes: {
+        showModalBg: {
+          from: { opacity: '0' },
+          to: { opacity: '1' },
+        },
+				showModalBox: {
+          from: {  opacity: '0' , marginTop:'-10px' },
+          to: { opacity: '1' , marginTop:'0' },
+        }
+      },
+			animation: {
+        'showmodalBg': 'showModalBg .3s ',
+        'showmodalBox': 'showModalBox .3s ',
+      },
+
 			colors: {
 				"point-background": "#eff6ff;",
         "background-gray":"rgb(237, 240, 243);",
@@ -21,7 +36,7 @@ module.exports = {
 				"error-color": "#ec4899",
 				"primary-shadow": "0 1px 2px 0 rgb(0 0 0 / 0.05);",
 				
-				"modal-bg": "rgba(0, 0, 0, 0.67)",
+				"modal-bg": "rgba(0, 0, 0, 0.6)",
 				"map-bg": "rgba(255, 255, 255, 0.8)",
 				"item-hover": "#EEEEEE",
 				"uni-bg": "#629EE4",

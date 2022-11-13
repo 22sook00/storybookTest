@@ -2,6 +2,7 @@ import React from "react";
 import Modal from "./Modal";
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
+import Input from "../Input/Input";
 
 export default {
   title: "Common/Modal",
@@ -15,11 +16,13 @@ export default {
 };
 
 export const modal = () => {
-  const title = text("title", "결제 성공");
-  const desc = text("desc", "결제가 성공적으로 이루어졌습니다.");
+  const title = text("title", "회원가입");
+  const desc = text("desc", "가입을 통해 더 다양한 서비스를 만나보세요!");
 
   return (
-    <Modal title={title} desc={desc} onClose={action("모달 닫아요!!")}></Modal>
+    <Modal title={title} desc={desc} onClose={action("모달 닫아요!!")}>
+      {/*<Input />*/}
+    </Modal>
   );
 };
 
