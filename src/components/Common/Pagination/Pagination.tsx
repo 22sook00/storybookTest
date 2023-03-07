@@ -70,7 +70,9 @@ const Pagination: FC<PaginationProps> = ({ curIdx, total, setCurIdx }) => {
       </ul>
 
       <ChevronRightIcon
-        className={curIdx === total ? "text-[#d1d1d1] cursor-not-allowed" : ""}
+        className={`w-6 h-6 ${
+          curIdx === total ? "text-[#d1d1d1] cursor-not-allowed" : ""
+        }`}
         onClick={() => setCurIdx(curIdx + 1)}
       />
     </div>

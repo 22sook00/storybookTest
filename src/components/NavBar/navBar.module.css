@@ -1,11 +1,11 @@
-.nav-container {
+.nav_container {
   height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: "0 1px 2px 0 rgb(0 0 0 / 0.05)";
 }
-.nav-wrapper {
+.nav_wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,19 +13,17 @@
   max-width: 1240px;
   margin: 0 auto;
 }
-.nav-button-wrapper {
+.nav_button_wrapper {
   display: flex;
   gap: 10px;
 }
-h2 {
-  text-transform: capitalize;
-}
+
 @media (max-width: 1239px) {
-  .nav-wrapper {
+  .nav_wrapper {
     margin: 0 20px;
   }
 }
-.logged-in-box {
+.logged_in_box {
   height: fit-content;
   display: flex;
   gap: 20px;

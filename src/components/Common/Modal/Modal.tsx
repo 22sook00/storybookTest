@@ -1,7 +1,7 @@
 import React, { FC, SetStateAction } from "react";
-//import "./modal.css";
+import styles from "./modal.module.css";
 import { XMarkIcon } from "@heroicons/react/24/solid";
-import Line from "../Line/Line";
+import Line from "../../Line/Line";
 
 export interface ModalProps {
   title?: string;
@@ -25,8 +25,8 @@ const Modal: FC<ModalProps> = ({
   icon,
 }) => {
   return (
-    <section className="flex-col justify-center items-center fixed top-0 right-0 left-0 bottom-0 z-50 bg-modal-bg animate-showmodalBg flex ">
-      <div className="bg-white rounded-[8px] animate-showmodalBox flex flex-col justify-center items-center py-10 box-border m-auto w-[90%] max-w-[500px]">
+    <section className={styles.modal_background}>
+      <div className={styles.modal_container}>
         <header>
           <nav className="w-full h-fit flex justify-between items-center mb-[6px] box-border px-10">
             <h2 className="text-2xl font-bold">{title}</h2>

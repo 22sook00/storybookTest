@@ -5,12 +5,13 @@ import React, {
   SetStateAction,
   FC,
 } from "react";
-import Button from "../Buttons/Button";
+import Button from "../Common/Buttons/Button";
+import Modal from "../Common/Modal/Modal";
 import InputError from "../ErrorBoundary/ErrorBoundary";
-import Input from "../Input/Input";
+import Input from "../Common/Input/Input";
 import Line from "../Line/Line";
-import Modal from "../Modal/Modal";
 //import "./auth.css";
+import styles from "./auth.module.css";
 
 interface LoginProps {
   onClose: () => void;
@@ -51,7 +52,7 @@ const Login: FC<LoginProps> = ({ onClose, onClick, setIsOpenSignup }) => {
 
   return (
     <Modal title={"로그인"} onClose={onClose} onClick={onClick}>
-      <form className="form-container" onSubmit={handleLogin}>
+      <form className={styles.form_container} onSubmit={handleLogin}>
         <Input
           name={"email"}
           placeholder={"E-mail"}
@@ -80,7 +81,7 @@ const Login: FC<LoginProps> = ({ onClose, onClick, setIsOpenSignup }) => {
       <div style={{ margin: "0 40px" }}>
         <Line />
       </div>
-      <div className="signup-section">
+      <div className={styles.signup_section}>
         <span>아직 회원이 아니신가요?</span>{" "}
         <span onClick={handleMoveSignup}>간편 회원가입</span>
       </div>
