@@ -20,7 +20,7 @@
   }
 }
 
-.modal-background {
+.modal_background {
   position: fixed;
   top: 0;
   right: 0;
@@ -34,7 +34,7 @@
   justify-content: center;
   align-items: center;
 }
-.modal-container {
+.modal_container {
   padding: 40px 0;
   box-sizing: border-box;
   margin: 0 auto;
@@ -52,7 +52,7 @@
   margin: 0 0 15px;
 }
 
-.modal-container > header > nav {
+.modal_container > header > nav {
   width: 100%;
   height: fit-content;
   display: flex;
@@ -69,10 +69,10 @@
   font-size: 14px;
 }
 @media screen and (max-width: 767px) {
-  .modal-background {
+  .modal_background {
     display: unset;
   }
-  .modal-container {
+  .modal_container {
     width: 100%;
     max-width: unset;
     border-radius: unset;

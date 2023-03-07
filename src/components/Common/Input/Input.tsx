@@ -18,7 +18,7 @@ const Input: FC<InputProps> = ({
 }) => {
   return (
     <input
-      className="w-full h-12 px-[10px] box-border	border border-background-gray rounded-md"
+      className="w-full h-12 px-[10px] box-border	border border-background-gray rounded-md "
       type={type}
       name={name}
       value={value}

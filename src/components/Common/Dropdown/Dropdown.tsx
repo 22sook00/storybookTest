@@ -1,6 +1,6 @@
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import React, { FC, SetStateAction, useCallback, useState } from "react";
-//import "./dropdown.css";
+import styles from "./dropdown.module.css";
 
 interface DropdownProps {
   options: any;
@@ -22,16 +22,16 @@ const Dropdown: FC<DropdownProps> = ({
     [isOpenDropdown, setSelectItem]
   );
   return (
-    <section className="dropdown-container">
+    <section className={styles.dropdown_container}>
       <div
-        className="dropdown-wrapper"
+        className={styles.dropdown_wrapper}
         onClick={() => setIsOpenDropdown(!isOpenDropdown)}
       >
         <p>{selectItem}</p>
         <ChevronDownIcon />
       </div>
       {isOpenDropdown && (
-        <ul className="dropdown-list-box">
+        <ul className={styles.dropdown_list_box}>
           {options.map((item: any, idx: number) => {
             return (
               <li onClick={() => handleChangeItem(item)} key={idx}>

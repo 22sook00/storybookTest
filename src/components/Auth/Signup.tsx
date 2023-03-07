@@ -1,11 +1,12 @@
 import React, { useState, useCallback, FC } from "react";
 //import "./auth.css";
+import styles from "./auth.module.css";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import InputError from "../ErrorBoundary/ErrorBoundary";
-import Input from "../Input/Input";
-import Button from "../Buttons/Button";
-import Modal from "../Modal/Modal";
-import Dropdown from "../Dropdown/Dropdown";
+import Input from "../Common/Input/Input";
+import Button from "../Common/Buttons/Button";
+import Dropdown from "../Common/Dropdown/Dropdown";
+import Modal from "../Common/Modal/Modal";
 
 interface SignupProps {
   onClose: () => void;
@@ -97,7 +98,7 @@ const Signup: FC<SignupProps> = ({ onClose, onClick }) => {
         onClose={onClose}
         onClick={onClick}
       >
-        <form className="form-container" onSubmit={handleSubmitSignup}>
+        <form className={styles.form_container} onSubmit={handleSubmitSignup}>
           <div style={{ display: "flex", gap: 10 }}>
             <Input
               name={"email"}

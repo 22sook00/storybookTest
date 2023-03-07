@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Line from "../Line/Line";
-import Pagination from "../Pagination/Pagination";
+import Pagination from "../Common/Pagination/Pagination";
 //import "./post.css";
 const PostList = () => {
   const LIMIT = 7;
