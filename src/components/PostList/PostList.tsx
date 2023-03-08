@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Line from "../Line/Line";
 import Pagination from "../Common/Pagination/Pagination";
+import Colorpicker from "../Common/Colorpicker/Colorpicker";
 //import "./post.css";
 const PostList = () => {
   const LIMIT = 7;
@@ -35,7 +36,7 @@ const PostList = () => {
   return (
     <section className="h-full flex flex-col justify-center w-full max-w-[1240px] py-10">
       <h3 className="mb-5 text-lg">자유게시판</h3>
-      <div className="rounded-[8px] h-full min-h-[450px] border border-background-gray shadow-primary-shadow p-[30px]">
+      {/*<div className="rounded-[8px] h-full min-h-[450px] border border-background-gray shadow-primary-shadow p-[30px]">
         <article className="flex gap-[10px] cursor-pointer">
           <span>번호</span>
           <span>제목</span>
@@ -58,7 +59,9 @@ const PostList = () => {
             </article>
           );
         })}
-      </div>
+      </div>*/}
+
+      <Colorpicker />
       <Pagination
         curIdx={curIdx}
         setCurIdx={setCurIdx}
