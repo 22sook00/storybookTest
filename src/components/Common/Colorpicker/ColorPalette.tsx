@@ -45,7 +45,7 @@ const ColorPalette = ({
 
   return (
     <ColorInteractive
-      className="rcp-saturation"
+      className="rcp-saturation rounded-lg"
       style={{ height, backgroundColor: `hsl(${color.hsv.h}, 100%, 50%)` }}
       onChange={updateColor}
     >

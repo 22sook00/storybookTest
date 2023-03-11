@@ -20,6 +20,7 @@ const Colorpicker = () => {
       {isOpenColor && (
         <section className="picker-section ">
           <ColorpickerContainer
+            alpha={true}
             color={color}
             onChange={setColor}
             width={200}

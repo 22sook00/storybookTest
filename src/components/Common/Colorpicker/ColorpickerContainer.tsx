@@ -17,24 +17,28 @@ const ColorPickerContainer = ({
   alpha = false,
   dark = false,
 }: ColorPickerProps): JSX.Element => (
-  <div className={`rcp ${dark ? "rcp-dark" : "rcp-light"}`} style={{ width }}>
-    <ColorPalette
-      width={width}
-      height={height}
-      color={color}
-      onChange={onChange}
-      onChangeComplete={onChangeComplete}
-    />
-    <ColorHue
-      //width={width - 40}
-      //height={height - 40}
-      height={height}
-      color={color}
-      onChange={onChange}
-      onChangeComplete={onChangeComplete}
-    />
-
-    <div className="rcp-body">
+  <div className={`w-[${width}px] flex flex-col gap-2`}>
+    <section
+      className={`flex gap-2 items-center rounded-lg ${
+        dark ? "bg-blue-dark" : "bg-bg-blue-light"
+      }`}
+    >
+      <ColorPalette
+        width={width}
+        height={height}
+        color={color}
+        onChange={onChange}
+        onChangeComplete={onChangeComplete}
+      />
+      <ColorHue
+        width={width - 40}
+        height={height}
+        color={color}
+        onChange={onChange}
+        onChangeComplete={onChangeComplete}
+      />
+    </section>
+    <section>
       {alpha && (
         <ColorAlpha
           width={width - 40}
@@ -43,6 +47,11 @@ const ColorPickerContainer = ({
           onChangeComplete={onChangeComplete}
         />
       )}
+    </section>
+
+    <section
+      className={`flex flex-col items-center justify-center p-3 box-border w-full  `}
+    >
       <ColorField
         color={color}
         hideHEX={hideHEX}
@@ -51,7 +60,7 @@ const ColorPickerContainer = ({
         alpha={alpha}
         onChange={onChange}
       />
-    </div>
+    </section>
   </div>
 );
 export default ColorPickerContainer;

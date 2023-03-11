@@ -27,6 +27,8 @@ module.exports = {
       },
 
       colors: {
+        "bg-blue-light": "f0f9ff",
+        "bg-blue-dark": "1e293b",
         "point-background": "#eff6ff;",
         "background-gray": "rgb(237, 240, 243);",
         "primary-text": "#475569;",
@@ -35,7 +37,7 @@ module.exports = {
         "point-color": "#3b82f6",
         "error-color": "#ec4899",
         "primary-shadow": "0 1px 2px 0 rgb(0 0 0 / 0.05);",
-
+        "secondary-shadow": "rgb(0 0 0 / 20%) 0px 0px 0px 0.5px",
         "modal-bg": "rgba(0, 0, 0, 0.6)",
         "map-bg": "rgba(255, 255, 255, 0.8)",
         "item-hover": "#EEEEEE",

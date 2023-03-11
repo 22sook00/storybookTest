@@ -40,7 +40,7 @@ const ColorHue = ({
       onChange={updateColor}
     >
       <div
-        className={`rcp-hue-cursor`}
+        className={`absolute translate-y-[-5px] translate-x-[-4px] cursor-pointer rounded-full w-5 h-5 border-2 border-gray-300 box-border shadow-secondary-shadow `}
         style={{
           ...startPoint,
           backgroundColor: `hsl(${color.hsv.h}, 100%, 50%)`,
