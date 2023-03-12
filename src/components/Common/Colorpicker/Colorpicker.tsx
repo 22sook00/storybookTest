@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Image from "next/image";
 import styles from "./colorpicker.module.css";
@@ -26,7 +27,6 @@ const Colorpicker = () => {
           <ColorpickerContainer color={color} onChange={setColor} />
         )}
       </section>
-
       <section className="flex gap-2 items-center flex-col justify-center">
         <Image
           placeholder="blur"

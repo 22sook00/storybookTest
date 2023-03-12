@@ -43,6 +43,7 @@ const UpperFloor = ({
           <label className="colorpicker-fields-element-label">HEX</label>
           <input
             className="colorpicker-fields-element-input"
+
             value={valueHEX.value}
             onFocus={(): void => setValueHEX({ ...valueHEX, inputted: true })}
             onChange={changeHEX}

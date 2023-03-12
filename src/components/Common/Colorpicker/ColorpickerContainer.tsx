@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-
 import { ColorPickerProps } from "react-color-palette/lib/interfaces/ColorPicker.interface";
 import ColorHue from "./ColorHue";
 import ColorPalette from "./ColorPalette";
@@ -9,6 +8,7 @@ import ColorEyedropper from "./ColorEyedropper";
 
 const ColorpickerContainer: FC<ColorPickerProps> = ({
   width = 200,
+
   height = width,
   color,
   onChange,
