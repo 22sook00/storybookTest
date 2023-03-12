@@ -10,17 +10,23 @@ const Colorpicker = () => {
   const [isOpenColor, setIsOpenColor] = useState<boolean>(false);
 
   return (
-    <main className="grid grid-cols-2 gap-2 border-2 border-gray-500">
-      <div
-        className={`border rounded-full w-10 h-10 border-[${color.hex}]`}
-        style={{ background: color.hex }}
-      />
-      <div onClick={() => setIsOpenColor(!isOpenColor)}>{color.hex}</div>
-      {isOpenColor && (
-        <section className="picker-section ">
+    <main>
+      <section className="flex items-center gap-2 h-10 relative">
+        <div
+          className={`border rounded-lg w-10 h-full border-[${color.hex}] `}
+          style={{ background: color.hex }}
+        />
+        <div
+          onClick={() => setIsOpenColor(!isOpenColor)}
+          className="text-sm cursor-pointer border-2 border-gray-500 w-36 px-2 h-full flex items-center rounded-md "
+        >
+          {color.hex}
+        </div>
+        {isOpenColor && (
           <ColorpickerContainer color={color} onChange={setColor} />
-        </section>
-      )}
+        )}
+      </section>
+
       <section className="flex gap-2 items-center flex-col justify-center">
         <Image
           placeholder="blur"

@@ -30,8 +30,8 @@ module.exports = {
         "point-background": "#eff6ff",
         "background-gray": "rgb(237, 240, 243)",
         "background-gray-light": "#f9f9fb",
-
         "background-gray-dark": "rgb(203 213 225)",
+
         "background-blue-dark": "#1e293b",
 
         "primary-text": "#475569;",

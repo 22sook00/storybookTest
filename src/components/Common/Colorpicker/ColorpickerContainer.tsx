@@ -24,7 +24,7 @@ const ColorpickerContainer: FC<ColorPickerProps> = ({
     width === 160 ? "w-[212px]" : width === 200 ? `w-[254px]` : "w-[292px]";
   return (
     <div
-      className={`${colorpickerWidth} flex flex-col gap-2 p-4  
+      className={`${colorpickerWidth} flex flex-col gap-2 p-4 h-fit rounded-lg shadow-sm drop-shadow-sm absolute top-12 left-0  
       ${
         dark
           ? "bg-background-blue-dark text-background-gray-light"
