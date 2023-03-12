@@ -1,6 +1,5 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
-//import sampleImg from "../../../../public/sample.jpg";
 import styles from "./colorpicker.module.css";
 import "react-color-palette/lib/css/styles.css";
 import ColorpickerContainer from "./ColorpickerContainer";
@@ -16,16 +15,10 @@ const Colorpicker = () => {
         className={`border rounded-full w-10 h-10 border-[${color.hex}]`}
         style={{ background: color.hex }}
       />
-      <input value={color.hex} onClick={() => setIsOpenColor(!isOpenColor)} />
+      <div onClick={() => setIsOpenColor(!isOpenColor)}>{color.hex}</div>
       {isOpenColor && (
         <section className="picker-section ">
-          <ColorpickerContainer
-            alpha={true}
-            color={color}
-            onChange={setColor}
-            width={200}
-            height={200}
-          />
+          <ColorpickerContainer color={color} onChange={setColor} />
         </section>
       )}
       <section className="flex gap-2 items-center flex-col justify-center">

@@ -107,7 +107,7 @@ export interface FieldsProps {
 }
 //hue
 export interface HueProps {
-  readonly width?: number;
+  readonly width: number | any;
   readonly height: number;
   readonly vertical?: boolean;
   readonly color: Color;

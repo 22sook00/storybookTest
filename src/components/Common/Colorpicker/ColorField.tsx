@@ -39,15 +39,15 @@ const UpperFloor = ({
   return (
     <>
       {!hideHEX && (
-        <div className="rcp-fields-element hex-element">
+        <div className="colorpicker-fields-element hex-element">
+          <label className="colorpicker-fields-element-label">HEX</label>
           <input
-            className="rcp-fields-element-input"
+            className="colorpicker-fields-element-input"
             value={valueHEX.value}
             onFocus={(): void => setValueHEX({ ...valueHEX, inputted: true })}
             onChange={changeHEX}
             onBlur={(): void => setValueHEX({ ...valueHEX, inputted: false })}
           />
-          <label className="rcp-fields-element-label">HEX</label>
         </div>
       )}
     </>
@@ -130,9 +130,10 @@ const LowerFloor = ({
       {(!hideRGB || !hideHSV) && (
         <>
           {!hideRGB && (
-            <div className="rcp-fields-element">
+            <div className="colorpicker-fields-element">
+              <label className="colorpicker-fields-element-label">RGB</label>
               <input
-                className="rcp-fields-element-input"
+                className="colorpicker-fields-element-input"
                 value={valueRGB.value}
                 onFocus={(): void =>
                   setValueRGB({ ...valueRGB, inputted: true })
@@ -142,13 +143,13 @@ const LowerFloor = ({
                   setValueRGB({ ...valueRGB, inputted: false })
                 }
               />
-              <label className="rcp-fields-element-label">RGB</label>
             </div>
           )}
           {!hideHSV && (
-            <div className="rcp-fields-element">
+            <div className="colorpicker-fields-element">
+              <label className="colorpicker-fields-element-label">HSV</label>
               <input
-                className="rcp-fields-element-input"
+                className="colorpicker-fields-element-input"
                 value={valueHSV.value}
                 onFocus={(): void =>
                   setValueHSV({ ...valueHSV, inputted: true })
@@ -158,7 +159,6 @@ const LowerFloor = ({
                   setValueHSV({ ...valueHSV, inputted: false })
                 }
               />
-              <label className="rcp-fields-element-label">HSV</label>
             </div>
           )}
         </>
@@ -178,7 +178,7 @@ const ColorField = ({
   return (
     <>
       {(!hideHEX || !hideRGB || !hideHSV) && (
-        <div className="rcp-fields">
+        <div className="w-full grid grid-cols-1 gap-2">
           <LowerFloor
             color={color}
             hideRGB={hideRGB}

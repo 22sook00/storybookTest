@@ -42,11 +42,14 @@ const ColorPalette = ({
 
     if (complete && onChangeComplete) onChangeComplete(newColor);
   };
-
   return (
     <ColorInteractive
-      className="rcp-saturation rounded-lg"
-      style={{ height, backgroundColor: `hsl(${color.hsv.h}, 100%, 50%)` }}
+      className={` bg-colorpickerDefaultGradient relative select-none rounded-lg`}
+      style={{
+        width,
+        height,
+        backgroundColor: `hsl(${color.hsv.h}, 100%, 50%)`,
+      }}
       onChange={updateColor}
     >
       <div

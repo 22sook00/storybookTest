@@ -29,11 +29,11 @@ const Button = ({
 }: ButtonProps) => {
   const sizeProps =
     size === "small"
-      ? "w-[100px] text-xs"
+      ? "w-[100px] p-2"
       : size === "medium"
-      ? "w-[150px] h-[43px] text-base"
+      ? "w-[150px] h-[43px] text-sm"
       : size === "big"
-      ? "w-[200px] h-[50px] text-xl"
+      ? "w-[200px] h-[50px] text-lg"
       : customStyle;
 
   const themeProps =
@@ -46,16 +46,12 @@ const Button = ({
       ? "bg-white border-2 border-point-color border-dashed"
       : customStyle;
 
-  //bg-point-background text-point-color
-
-  console.log("s", sizeProps, customStyle);
-
   return (
     <button
       className={`${sizeProps ?? customStyle} ${themeProps ?? customStyle} ${
         disabled &&
         "cursor-not-allowed bg-opacity-30 text-light-text border-opacity-30"
-      } transition-all text-sm align-middle py-2 rounded-md hover:opacity-75`}
+      } transition-all text-xs flex justify-center items-center py-1 rounded-md hover:opacity-75`}
       disabled={disabled}
       onClick={onClick}
     >

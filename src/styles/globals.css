@@ -18,11 +18,20 @@
   .dashed-horizon-line {
     @apply my-10 border-dashed border-b-4;
   }
+  .colorpicker-fields-element {
+    @apply flex items-center gap-2 text-xs;
+  }
+  .colorpicker-fields-element-input {
+    @apply w-full text-xs p-1 font-semibold text-center rounded-md border-solid border-2 border-default-border text-dark-text;
+  }
+  .colorpicker-fields-element-label {
+    @apply text-xs font-semibold text-center uppercase;
+  }
 }
 
 html,
 body {
-  color: #334155;
+  color: #475569;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -47,7 +56,7 @@ a {
       "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #334155;
+    color: #475569;
     box-sizing: border-box;
   }
   code {
@@ -84,7 +93,7 @@ a {
     list-style: none;
   }
   a {
-    color: #334155;
+    color: #475569;
     text-decoration: unset;
   }
 }

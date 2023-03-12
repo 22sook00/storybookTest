@@ -5,8 +5,8 @@ import { toColor } from "../../../utils/toColor";
 import ColorInteractive from "./ColorInteractive";
 
 const ColorHue = ({
-  width = 200,
-  height = 200,
+  width,
+  height,
   color,
   vertical = true,
   onChange,
@@ -31,12 +31,18 @@ const ColorHue = ({
   };
 
   const startPoint = vertical ? { top: position } : { left: position };
+  const chkHeight =
+    height === 160
+      ? "h-[160px]"
+      : height === 200
+      ? "h-[200px]"
+      : height === 240
+      ? "h-[240px]"
+      : "h-[12px]";
 
   return (
     <ColorInteractive
-      className={`rcp-hue ${
-        vertical ? "w-[12px] h-[200px]" : "w-full h-[12px]"
-      }`}
+      className={`rcp-hue ${vertical ? `w-[12px]` : `w-full`} ${chkHeight}`}
       onChange={updateColor}
     >
       <div
