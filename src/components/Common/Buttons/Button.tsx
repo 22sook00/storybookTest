@@ -50,7 +50,7 @@ const Button = ({
     <button
       className={`${sizeProps ?? customStyle} ${themeProps ?? customStyle} ${
         disabled &&
-        "cursor-not-allowed bg-opacity-30 text-light-text border-opacity-30"
+        "cursor-not-allowed bg-opacity-30 text-gray-dark border-opacity-30"
       } transition-all text-xs flex justify-center items-center py-1 rounded-md hover:opacity-75`}
       disabled={disabled}
       onClick={onClick}

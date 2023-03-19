@@ -27,7 +27,7 @@ const ColorEyedropper: FC<Pick<SaturationProps, "onChange">> = ({
   return (
     <div>
       <Button
-        customStyle="w-full bg-primary-text text-white font-bold"
+        customStyle="w-full bg-primary-light text-white font-bold"
         onClick={handleOpenEyedropper}
       >
         Eyedropper

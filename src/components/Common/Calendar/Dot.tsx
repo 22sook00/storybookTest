@@ -8,11 +8,11 @@ export const Dot: FC<DotType> = ({ order }) => {
     <div
       className={`w-1 h-1 rounded-full ${
         order === 1
-          ? "bg-blue-tag"
+          ? "bg-point-blue"
           : order === 2
-          ? "bg-pink-500"
+          ? "bg-point-red-light"
           : order === 3
-          ? " bg-green-tag"
+          ? " bg-point-gr"
           : ""
       }`}
     />

@@ -2,6 +2,7 @@ import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import Button from "./Button";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: "Common/Button",
   component: Button,

@@ -32,18 +32,18 @@ const CalendarItem: FC<CalendarItemProps> = ({
 
   const textColorByDay =
     idx === 0
-      ? "text-primary-red"
+      ? "text-point-red-dark"
       : idx === 6
-      ? "text-blue-dark-tag"
-      : "background-blue-dark";
+      ? "text-point-blue-dark"
+      : "text-primary-dark";
 
   const dayColorByType =
     type === "today"
       ? "bg-background-gray font-extrabold"
       : type === "focus"
-      ? "bg-background-blue-dark text-white"
+      ? "bg-primary-dark text-white"
       : type === "not-cur-month"
-      ? "text-tint-text"
+      ? "text-gray-dark"
       : "";
 
   return (

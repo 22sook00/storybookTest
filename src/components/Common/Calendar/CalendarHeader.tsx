@@ -30,7 +30,7 @@ const CalendarHeader: FC<CalendarHeaderProps> = ({
     <div className="flex items-center justify-between text-sm">
       <div className="flex gap-4 h-fit items-center">
         <button
-          className="p-1 w-5 h-5 rounded-lg bg-background-gray "
+          className="p-1 w-5 h-5 rounded-lg bg-gray-default"
           onClick={() => changeMonthHandler(prevMonth())}
         >
           <ChevronLeftIcon />
@@ -39,14 +39,14 @@ const CalendarHeader: FC<CalendarHeaderProps> = ({
           {curYear()}.{curMonth()}
         </p>
         <button
-          className="p-1 w-5 h-5 rounded-lg bg-background-gray "
+          className="p-1 w-5 h-5 rounded-lg bg-gray-default"
           onClick={() => changeMonthHandler(nextMonth())}
         >
           <ChevronRightIcon />
         </button>
       </div>
       <button
-        className="text-xs w-fit p-2 rounded-lg bg-background-gray font-bold"
+        className="text-xs w-fit p-2 rounded-lg bg-gray-default font-bold"
         onClick={() => changeMonthHandler(thisMonth())}
       >
         이번달

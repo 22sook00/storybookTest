@@ -10,10 +10,10 @@ const CalendarDayOfWeek = () => {
             key={idx}
             className={`${
               idx === 0
-                ? "text-primary-red"
+                ? "text-point-red"
                 : idx === 6
-                ? "text-blue-dark-tag"
-                : "text-dark-text"
+                ? "text-point-blue"
+                : "text-primary-default"
             } flex-1 w-[calc(100% / 7)] cursor-pointer my-2 leading-12 font-bold text-sm box-border text-center`}
           >
             {day}

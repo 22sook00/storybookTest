@@ -8,7 +8,7 @@ const InputError: FC<InputErrorProps> = ({ errTxt, confirmTxt }) => {
   return (
     <p
       className={`text-xs text-left ${
-        confirmTxt ? "text-green-600" : "text-error-color"
+        confirmTxt ? "text-point-gr" : "text-point-red"
       } `}
     >
       {errTxt}

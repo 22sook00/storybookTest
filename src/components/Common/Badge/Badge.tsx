@@ -32,7 +32,7 @@ const Badge: FC<TagProps> = ({
   };
 
   useEffect(() => {
-    hexToRGB(color, 0.1);
+    hexToRGB(color, 0.2);
   }, [color]);
 
   const badgeSize =

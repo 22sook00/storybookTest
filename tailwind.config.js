@@ -27,29 +27,40 @@ module.exports = {
       },
 
       colors: {
-        "point-background": "#eff6ff",
-        "background-gray": "rgb(237, 240, 243)",
-        "background-gray-light": "#f9f9fb",
-        "background-gray-dark": "rgb(203 213 225)",
+        //Grayscale
+        "gray-light": "#f9f9fb",
+        "gray-default": "rgb(237, 240, 243)",
+        "gray-dark": "rgb(203 213 225)",
 
-        "background-blue-dark": "#1e293b",
+        "primary-light": "#475569",
+        "primary-default": "#334155",
+        "primary-dark": "#1e293b",
 
-        "primary-text": "#475569;",
-        "secondary-text": "#333333",
-        "primary-red": "#f5738b",
-        "dark-text": "#334155;",
-        "light-text": "#818181",
-        "tint-text": "#ccc",
-        "error-color": "#ec4899",
-        "primary-shadow": "0 1px 2px 0 rgb(0 0 0 / 0.05);",
+        //tag&badge 와 같은 point color
+        //*red
+        "point-red-light": "rgb(253 164 175)",
+        "point-red": "rgb(244 63 94)",
+        "point-red-dark": "rgb(225 29 72)",
+        //*yellow
+        "point-yel-light": "rgb(253 230 138)",
+        "point-yel": "rgb(252 211 77)",
+        "point-yel-dark": "rgb(251 191 36)",
+        //*green
+        "point-gr-light": "rgb(94 234 212)",
+        "point-gr": "rgb(45 212 191)",
+        "point-gr-dark": "rgb(20 184 166)",
+        //*blue
+        "point-blue-light": "rgb(56 189 248)",
+        "point-blue": "rgb(14 165 233)",
+        "point-blue-dark": "rgb(2 132 199)",
+        //*indigo
+        "point-indigo-light": "rgb(199 210 254)",
+        "point-indigo": "rgb(165 180 252)",
+        "point-indigo-dark": "rgb(99 102 241)",
+
+        //shadow
+        "primary-shadow": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
         "secondary-shadow": "rgb(0 0 0 / 20%) 0px 0px 0px 0.5px",
-        "modal-bg": "rgba(0, 0, 0, 0.6)",
-        "map-bg": "rgba(255, 255, 255, 0.8)",
-        "item-hover": "#EEEEEE",
-        "blue-tag": "#629EE4",
-        "blue-dark-tag": "#3b82f6",
-        "green-tag": "#76C781",
-        "default-border": "#e5e7eb",
       },
       fontFamily: {
         Roboto: ["Roboto", "serif"],
