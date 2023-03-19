@@ -23,7 +23,12 @@ const Colorpicker = () => {
           {color.hex}
         </div>
         {isOpenColor && (
-          <ColorpickerContainer color={color} onChange={setColor} />
+          <ColorpickerContainer
+            color={color}
+            onChange={setColor}
+            isOpenColor={isOpenColor}
+            setIsOpenColor={setIsOpenColor}
+          />
         )}
       </section>
 
