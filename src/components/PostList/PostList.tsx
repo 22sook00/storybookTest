@@ -4,14 +4,17 @@ import Image from "next/image";
 import Pagination from "../Common/Pagination/Pagination";
 import Colorpicker from "../Common/Colorpicker/Colorpicker";
 import Badge from "../Common/Badge/Badge";
+import Calendar from "../Common/Calendar/Calendar";
+import { allData } from "../Common/Calendar/defaultData";
+import moment from "moment";
 //import "./post.css";
 const PostList = () => {
   const LIMIT = 7;
   const [curIdx, setCurIdx] = useState(1);
   const [postDatas, setPostDatas] = useState<any>([]);
-
+  const [selectDate, setSelectDate] = useState("");
   const [curColor, setCurColor] = useState("");
-
+  console.log("selectDate", selectDate);
   useEffect(() => {
     console.log("no data");
     //const postingByPagination = async () => {
@@ -39,7 +42,7 @@ const PostList = () => {
 
   return (
     <section className="h-full flex flex-col justify-center w-full max-w-[1240px] py-10">
-      <h3 className="mb-5 text-lg">자유게시판</h3>
+      {/*<h3 className="mb-5 text-lg">자유게시판</h3>*/}
       {/*<div className="rounded-[8px] h-full min-h-[450px] border border-background-gray shadow-primary-shadow p-[30px]">
         <article className="flex gap-[10px] cursor-pointer">
           <span>번호</span>
@@ -64,7 +67,7 @@ const PostList = () => {
           );
         })}
       </div>*/}
-      <section className="grid grid-cols-3 gap-4 items-center">
+      {/*<section className="grid grid-cols-3 gap-4 items-center">
         <Badge text="뱃지sm" color="#2ad395" />
         <Badge text="뱃지md" color="#d32a8f" size="md" />
         <Badge text="뱃지lg" color="#2a2ad3" size="lg" />
@@ -82,6 +85,9 @@ const PostList = () => {
           height={200}
         />
         <div className="preview-div">컬러를 나타냅니다.</div>
+      </section>*/}
+      <section>
+        <Calendar allData={allData} setSelectDate={setSelectDate} />
       </section>
       <Pagination
         curIdx={curIdx}

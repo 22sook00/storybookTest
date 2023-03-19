@@ -36,8 +36,10 @@ module.exports = {
 
         "primary-text": "#475569;",
         "secondary-text": "#333333",
+        "primary-red": "#f5738b",
         "dark-text": "#334155;",
         "light-text": "#818181",
+        "tint-text": "#ccc",
         "error-color": "#ec4899",
         "primary-shadow": "0 1px 2px 0 rgb(0 0 0 / 0.05);",
         "secondary-shadow": "rgb(0 0 0 / 20%) 0px 0px 0px 0.5px",
