@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Line from "../Line/Line";
+import Image from "next/image";
 import Pagination from "../Common/Pagination/Pagination";
 import Colorpicker from "../Common/Colorpicker/Colorpicker";
 //import "./post.css";
@@ -7,6 +8,8 @@ const PostList = () => {
   const LIMIT = 7;
   const [curIdx, setCurIdx] = useState(1);
   const [postDatas, setPostDatas] = useState<any>([]);
+
+  const [curColor, setCurColor] = useState("");
 
   useEffect(() => {
     console.log("no data");
@@ -61,7 +64,18 @@ const PostList = () => {
         })}
       </div>*/}
 
-      <Colorpicker />
+      <Colorpicker setCurColor={setCurColor} />
+      <section className="flex gap-2 items-center flex-col justify-center">
+        <Image
+          placeholder="blur"
+          src={`/sample.jpg`}
+          blurDataURL={"data"}
+          alt="img"
+          width={200}
+          height={200}
+        />
+        <div className="preview-div">컬러를 나타냅니다.</div>
+      </section>
       <Pagination
         curIdx={curIdx}
         setCurIdx={setCurIdx}

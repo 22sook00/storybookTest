@@ -1,14 +1,24 @@
-import React, { useState } from "react";
-import Image from "next/image";
-import styles from "./colorpicker.module.css";
+import React, {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import "react-color-palette/lib/css/styles.css";
 import ColorpickerContainer from "./ColorpickerContainer";
 import { useColor } from "../../../hook/useColor";
 
-const Colorpicker = () => {
+interface colorpickerProps {
+  setCurColor: React.Dispatch<SetStateAction<string>>;
+}
+const Colorpicker: FC<colorpickerProps> = ({ setCurColor }) => {
   const [color, setColor] = useColor("hex", "#a8b0c6");
   const [isOpenColor, setIsOpenColor] = useState<boolean>(false);
 
+  useEffect(() => {
+    setCurColor(color.hex);
+  }, [color.hex, setCurColor]);
   return (
     <main>
       <section className="flex items-center gap-2 h-10 relative">
@@ -30,18 +40,6 @@ const Colorpicker = () => {
             setIsOpenColor={setIsOpenColor}
           />
         )}
-      </section>
-
-      <section className="flex gap-2 items-center flex-col justify-center">
-        <Image
-          placeholder="blur"
-          src={`/sample.jpg`}
-          blurDataURL={"data"}
-          alt="img"
-          width={200}
-          height={200}
-        />
-        <div className="preview-div">컬러를 나타냅니다.</div>
       </section>
     </main>
   );
