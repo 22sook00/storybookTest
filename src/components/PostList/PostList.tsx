@@ -3,6 +3,7 @@ import Line from "../Line/Line";
 import Image from "next/image";
 import Pagination from "../Common/Pagination/Pagination";
 import Colorpicker from "../Common/Colorpicker/Colorpicker";
+import Badge from "../Common/Badge/Badge";
 //import "./post.css";
 const PostList = () => {
   const LIMIT = 7;
@@ -63,8 +64,14 @@ const PostList = () => {
           );
         })}
       </div>*/}
+      <section className="grid grid-cols-3 gap-4 items-center">
+        <Badge text="뱃지sm" color="#2ad395" />
+        <Badge text="뱃지md" color="#d32a8f" size="md" />
+        <Badge text="뱃지lg" color="#2a2ad3" size="lg" />
+      </section>
 
       <Colorpicker setCurColor={setCurColor} />
+
       <section className="flex gap-2 items-center flex-col justify-center">
         <Image
           placeholder="blur"
