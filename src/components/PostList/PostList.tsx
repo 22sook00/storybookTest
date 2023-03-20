@@ -11,6 +11,7 @@ import StyleDefinition from "../StyleDefinition/StyleDefinition";
 import Modal from "../Common/Modal/Modal";
 import Button from "../Common/Buttons/Button";
 import Tooltip from "../Common/Tooltip/Tooltip";
+import Accordion from "../Common/Accordion/Accordion";
 //import "./post.css";
 const PostList = () => {
   const LIMIT = 7;
@@ -48,7 +49,8 @@ const PostList = () => {
 
   return (
     <section className="h-full flex flex-col justify-center w-full max-w-[1240px] py-10 ">
-      <Tooltip></Tooltip>
+      <Tooltip />
+      <Accordion />
       <StyleDefinition />
       <section className="grid grid-cols-3 gap-4 items-center">
         <Badge text="뱃지sm" color="#fdd43d" />
