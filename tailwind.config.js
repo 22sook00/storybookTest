@@ -48,9 +48,9 @@ module.exports = {
         "point-yel": "rgb(252 211 77)",
         "point-yel-dark": "rgb(251 191 36)",
         //*green
-        "point-gr-light": "rgb(94 234 212)",
-        "point-gr": "rgb(45 212 191)",
-        "point-gr-dark": "rgb(20 184 166)",
+        "point-gr-light": "#6ed8cd",
+        "point-gr": "#47c6b9",
+        "point-gr-dark": "#1eb7a7",
         //*blue
         "point-blue-light": "#7abef5",
         "point-blue": "#2b96ed",

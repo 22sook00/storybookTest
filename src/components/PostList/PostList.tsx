@@ -10,6 +10,7 @@ import moment from "moment";
 import StyleDefinition from "../StyleDefinition/StyleDefinition";
 import Modal from "../Common/Modal/Modal";
 import Button from "../Common/Buttons/Button";
+import Tooltip from "../Common/Tooltip/Tooltip";
 //import "./post.css";
 const PostList = () => {
   const LIMIT = 7;
@@ -22,7 +23,6 @@ const PostList = () => {
     setIsOpenModal((prev) => !prev);
   };
   useEffect(() => {
-    console.log("no data");
     //const postingByPagination = async () => {
     //	try {
     //		const response = await GETPOSTLIST({
@@ -48,31 +48,7 @@ const PostList = () => {
 
   return (
     <section className="h-full flex flex-col justify-center w-full max-w-[1240px] py-10 ">
-      {/*<h3 className="mb-5 text-lg">자유게시판</h3>*/}
-      {/*<div className="rounded-[8px] h-full min-h-[450px] border border-background-gray shadow-primary-shadow p-[30px]">
-        <article className="flex gap-[10px] cursor-pointer">
-          <span>번호</span>
-          <span>제목</span>
-          <span>작성자</span>
-          <span>조회수</span>
-          <span>작성일</span>
-        </article>
-        {postDatas?.list?.map((post: any, idx: number) => {
-          const postNum = idx + 1 + LIMIT * (curIdx - 1);
-          return (
-            <article key={idx} onClick={() => handleViewCount(post?.id)}>
-              <>
-                <span>{postNum}</span>
-                <span>{post?.title}</span>
-                <span>{post?.user_name}</span>
-                <span>{post?.view_count}</span>
-              </>
-
-              {idx + 1 !== LIMIT && <Line />}
-            </article>
-          );
-        })}
-      </div>*/}
+      <Tooltip></Tooltip>
       <StyleDefinition />
       <section className="grid grid-cols-3 gap-4 items-center">
         <Badge text="뱃지sm" color="#fdd43d" />
@@ -83,7 +59,7 @@ const PostList = () => {
       <Colorpicker setCurColor={setCurColor} />
       <Button
         size="small"
-        theme="tertiary"
+        theme="secondary"
         onClick={() => setIsOpenModal(true)}
       >
         모달열기클릭
