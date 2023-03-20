@@ -8,6 +8,8 @@ import Calendar from "../Common/Calendar/Calendar";
 import { allData } from "../Common/Calendar/defaultData";
 import moment from "moment";
 import StyleDefinition from "../StyleDefinition/StyleDefinition";
+import Modal from "../Common/Modal/Modal";
+import Button from "../Common/Buttons/Button";
 //import "./post.css";
 const PostList = () => {
   const LIMIT = 7;
@@ -15,6 +17,10 @@ const PostList = () => {
   const [postDatas, setPostDatas] = useState<any>([]);
   const [selectDate, setSelectDate] = useState("");
   const [curColor, setCurColor] = useState("");
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const handleOpen = () => {
+    setIsOpenModal((prev) => !prev);
+  };
   useEffect(() => {
     console.log("no data");
     //const postingByPagination = async () => {
@@ -75,18 +81,30 @@ const PostList = () => {
       </section>
 
       <Colorpicker setCurColor={setCurColor} />
-
-      {/*<section className="flex gap-2 items-center flex-col justify-center">
-        <Image
-          placeholder="blur"
-          src={`/sample.jpg`}
-          blurDataURL={"data"}
-          alt="img"
-          width={200}
-          height={200}
-        />
-        <div className="preview-div">컬러를 나타냅니다.</div>
-      </section>*/}
+      <Button
+        size="small"
+        theme="tertiary"
+        onClick={() => setIsOpenModal(true)}
+      >
+        모달열기클릭
+      </Button>
+      {isOpenModal && (
+        <Modal
+          title="modal test"
+          desc="모달 테스트"
+          dimmed={false}
+          size="md"
+          onClose={() => handleOpen()}
+          setIsOpenModal={setIsOpenModal}
+        >
+          <h2>안녕하세요!</h2>
+          <h3>나이스투밋츄!</h3>
+          <p>이숙영입니다.</p>
+          <h2>안녕하세요!</h2>
+          <h3>나이스투밋츄!</h3>
+          <p>이숙영입니다.</p>
+        </Modal>
+      )}
       <section>
         <Calendar allData={allData} setSelectDate={setSelectDate} />
       </section>

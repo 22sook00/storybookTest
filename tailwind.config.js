@@ -8,24 +8,26 @@ module.exports = {
   ],
   theme: {
     extend: {
-      animation: {
-        "spin-slow": "spin 5s ease infinite",
-      },
       keyframes: {
         showModalBg: {
           from: { opacity: "0" },
           to: { opacity: "1" },
         },
         showModalBox: {
-          from: { opacity: "0", marginTop: "-10px" },
+          from: { opacity: "0", marginTop: "-30px" },
           to: { opacity: "1", marginTop: "0" },
+        },
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
         },
       },
       animation: {
-        showmodalBg: "showModalBg 0.3s ",
-        showmodalBox: "showModalBox 0.3s ",
+        "spin-slow": "spin 5s ease infinite",
+        "showmodal-bg": "showModalBg 0.3s ",
+        "showmodal-box": "showModalBox 0.3s ",
+        wiggle: "wiggle 1s ease-in-out infinite",
       },
-
       colors: {
         //Grayscale
         "gray-light": "#f9f9fb",
@@ -50,9 +52,9 @@ module.exports = {
         "point-gr": "rgb(45 212 191)",
         "point-gr-dark": "rgb(20 184 166)",
         //*blue
-        "point-blue-light": "rgb(56 189 248)",
-        "point-blue": "rgb(14 165 233)",
-        "point-blue-dark": "rgb(2 132 199)",
+        "point-blue-light": "#7abef5",
+        "point-blue": "#2b96ed",
+        "point-blue-dark": "#1683db",
         //*indigo
         "point-indigo-light": "rgb(199 210 254)",
         "point-indigo": "rgb(165 180 252)",
@@ -72,6 +74,10 @@ module.exports = {
       },
       screens: {
         desktop: "1120px",
+        xl: { max: "1279px" },
+        lg: { max: "1023px" },
+        md: { max: "767px" },
+        sm: { max: "639px" },
       },
       gridTemplateColumns: {
         "listpage-desktop": "269px minmax(1fr, 835px)",

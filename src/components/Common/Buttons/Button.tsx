@@ -19,7 +19,7 @@ type ButtonProps = {
 
 const Button = ({
   children,
-  theme,
+  theme = "primary",
   size,
   disabled,
   customStyle,
@@ -29,7 +29,7 @@ const Button = ({
 }: ButtonProps) => {
   const sizeProps =
     size === "small"
-      ? "w-[100px] p-2"
+      ? "min-w-[100px] w-fit py-3 px-2 "
       : size === "medium"
       ? "w-[150px] h-[43px] text-sm"
       : size === "big"
@@ -38,20 +38,21 @@ const Button = ({
 
   const themeProps =
     theme === "primary"
-      ? "bg-point-background text-point-color"
+      ? `btn-primary`
       : theme === "secondary"
-      ? "bg-point-color text-point-background"
+      ? `btn-secondary`
       : //tertiary 는 라인 하자
       theme === "tertiary"
-      ? "bg-white border-2 border-point-color border-dashed"
+      ? `bg-white border-2 border-point-blue-dark border-dashed`
       : customStyle;
 
   return (
     <button
-      className={`${sizeProps ?? customStyle} ${themeProps ?? customStyle} ${
+      className={`${sizeProps ?? customStyle} ${themeProps ?? customStyle} 
+      ${
         disabled &&
         "cursor-not-allowed bg-opacity-30 text-gray-dark border-opacity-30"
-      } transition-all text-xs flex justify-center items-center py-1 rounded-md hover:opacity-75`}
+      } font-bold transition-all text-xs flex justify-center items-center py-1 rounded hover:opacity-90`}
       disabled={disabled}
       onClick={onClick}
     >

@@ -1,17 +1,20 @@
-import React, { FC, SetStateAction } from "react";
+import React, { FC, SetStateAction, useEffect, useRef } from "react";
 import styles from "./modal.module.css";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import Line from "../../Line/Line";
+import useClickOutside from "../../../hook/useClickOutside";
 
 export interface ModalProps {
   title?: string;
   desc?: string;
   onClose?: () => void;
-  onClick?: () => void;
+  setIsOpenModal: React.Dispatch<SetStateAction<boolean>>;
   children?: React.ReactNode;
-  hideButtons?: boolean;
   isCard?: boolean;
   icon?: React.ReactNode;
+  blur?: boolean;
+  dimmed?: boolean;
+  size?: "sm" | "md" | "lg";
 }
 
 const Modal: FC<ModalProps> = ({
@@ -19,26 +22,53 @@ const Modal: FC<ModalProps> = ({
   desc,
   onClose,
   children,
-  onClick,
-  hideButtons,
-  isCard,
-  icon,
+  setIsOpenModal,
+  isCard = false,
+  blur = true,
+  dimmed = true,
+  size = "sm",
 }) => {
+  const modalRef = useRef<HTMLDivElement | null>(null);
+  const handleClickOutside = () => {
+    setIsOpenModal(false);
+    document.body.classList.remove("open-modal");
+  };
+  useClickOutside(modalRef, handleClickOutside);
+  useEffect(() => {
+    document.body.classList.add("open-modal");
+  }, []);
+
+  const modalSize =
+    size === "sm"
+      ? "max-w-[500px] min-h-[200px]"
+      : size === "md"
+      ? "max-w-[620px] min-h-[400px]"
+      : "max-w-[800px] min-h-[500px]";
+
   return (
-    <section className={styles.modal_background}>
-      <div className={styles.modal_container}>
-        <header>
-          <nav className="w-full h-fit flex justify-between items-center mb-[6px] box-border px-10">
+    <section
+      className={`${blur && "backdrop-blur-sm"} 
+      sm:flex-none
+      animate-showmodal-bg fixed top-0 left-0 z-50 w-full h-full overflow-auto default-flex bg-primary-default/40`}
+    >
+      <div
+        className={`${
+          dimmed && "sm:max-w-[unset] sm:h-full "
+        } ${modalSize} sm:mx-4 animate-showmodal-box bg-white shadow-md p-6 box-border w-full rounded-md`}
+        ref={modalRef}
+      >
+        <header className="w-full">
+          <nav className="w-full h-fit flex justify-between items-center mb-2 box-border ">
             <h2 className="text-2xl font-bold">{title}</h2>
             <XMarkIcon
               style={{ width: "20px", height: "20px", cursor: "pointer" }}
               onClick={onClose}
             />
           </nav>
-          {desc && <p className="mb-10 text-sm">{desc}</p>}
+          {desc && <p className="text-sm">{desc}</p>}
         </header>
         <Line />
-        <div className="text-center mb-[15px]">{children}</div>
+        <article className="w-full mb-[15px]">{children}</article>
       </div>
     </section>
   );

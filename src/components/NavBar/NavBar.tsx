@@ -16,8 +16,10 @@ const NavBar = () => {
           board
         </h2>
         <div className={styles.nav_button_wrapper}>
-          <Button onClick={() => setIsOpenLogin(!isOpenLogin)}>로그인</Button>
-          <Button onClick={() => setIsOpenSignup(!isOpenSignup)}>
+          <Button size="small" onClick={() => setIsOpenLogin(!isOpenLogin)}>
+            로그인
+          </Button>
+          <Button size="small" onClick={() => setIsOpenSignup(!isOpenSignup)}>
             회원가입
           </Button>
         </div>

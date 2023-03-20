@@ -43,22 +43,23 @@ const Pagination: FC<PaginationProps> = ({ curIdx, total, setCurIdx }) => {
 
   return (
     <div className="h-fit text-center my-20 flex items-center justify-center">
-      <ChevronLeftIcon
-        className={`w-6 h-6 cursor-pointer ${
-          curIdx === 1 ? "text-[#d1d1d1] cursor-not-allowed" : ""
-        }`}
-        onClick={() => setCurIdx(curIdx - 1)}
-      />
+      <button onClick={() => setCurIdx(curIdx - 1)}>
+        <ChevronLeftIcon
+          className={`w-6 h-6 cursor-pointer ${
+            curIdx === 1 ? "text-gray-dark cursor-not-allowed" : ""
+          }`}
+        />
+      </button>
       <ul className="flex gap-[10px] mx-[50px]">
         {pages.map((page: any, idx) => {
           return (
             <li
               onClick={() => setCurIdx(page)}
               key={idx}
-              className={` cursor-pointer w-6 h-6 pt-[3px] text-center text-xs
+              className={`font-semibold cursor-pointer w-6 h-6 pt-[3px] text-center text-xs
                 ${
                   curIdx === page
-                    ? " bg-point-background text-point-color rounded-full"
+                    ? " bg-primary-default text-gray-light rounded-full"
                     : "page-numbers"
                 }
               `}
@@ -69,12 +70,15 @@ const Pagination: FC<PaginationProps> = ({ curIdx, total, setCurIdx }) => {
         })}
       </ul>
 
-      <ChevronRightIcon
-        className={`w-6 h-6 ${
-          curIdx === total ? "text-[#d1d1d1] cursor-not-allowed" : ""
-        }`}
-        onClick={() => setCurIdx(curIdx + 1)}
-      />
+      <button onClick={() => setCurIdx(curIdx + 1)}>
+        <ChevronRightIcon
+          className={`w-6 h-6 ${
+            curIdx === total
+              ? "text-[#d1d1d1] cursor-not-allowed"
+              : " cursor-pointer"
+          }`}
+        />
+      </button>
     </div>
   );
 };
