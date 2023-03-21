@@ -44,7 +44,7 @@ const Badge: FC<TagProps> = ({
 
   return (
     <div
-      style={{ color: color, background: background ?? bgColor }}
+      // style={{ color: color, background: background ?? bgColor }}
       className={`w-fit rounded-md font-bold text-center ${badgeSize} `}
     >
       {text}
