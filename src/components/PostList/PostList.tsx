@@ -12,6 +12,7 @@ import Modal from "../Common/Modal/Modal";
 import Button from "../Common/Buttons/Button";
 import Tooltip from "../Common/Tooltip/Tooltip";
 import Accordion from "../Common/Accordion/Accordion";
+import Checkbox from "../Common/Checkbox/Checkbox";
 //import "./post.css";
 const PostList = () => {
   const LIMIT = 7;
@@ -50,6 +51,7 @@ const PostList = () => {
   return (
     <section className="h-full flex flex-col justify-center w-full max-w-[1240px] py-10 ">
       <Tooltip />
+      <Checkbox text={"hi"} />
       <Accordion />
       <StyleDefinition />
       <section className="grid grid-cols-3 gap-4 items-center">
@@ -57,7 +59,6 @@ const PostList = () => {
         <Badge text="뱃지md" color="#0ed1a4" size="md" />
         <Badge text="뱃지lg" color="#3898ff" size="lg" />
       </section>
-
       <Colorpicker setCurColor={setCurColor} />
       <Button
         size="small"
