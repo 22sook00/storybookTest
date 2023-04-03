@@ -14,6 +14,7 @@ import Tooltip from "../Common/Tooltip/Tooltip";
 import Accordion from "../Common/Accordion/Accordion";
 import Checkbox from "../Common/Checkbox/Checkbox";
 import Toggle from "../Common/Toggle/Toggle";
+import { Dummies } from "./dummyList";
 //import "./post.css";
 const PostList = () => {
   const LIMIT = 7;
@@ -49,9 +50,28 @@ const PostList = () => {
     //}
   }, []);
 
+  const [selectedIDX, setSelectedIDX] = useState<number | null>(0);
+  const handleClickToggle = (i: number) => {
+    if (selectedIDX === i) {
+      return setSelectedIDX(null);
+    }
+    setSelectedIDX(i);
+  };
   return (
     <section className="h-full flex flex-col justify-center w-full max-w-[1240px] py-10 ">
-      <Toggle />
+      <div className="flex flex-col gap-4">
+        {Dummies.map((list) => {
+          return (
+            <div key={list.id}>
+              <Toggle
+                handleClickToggle={() => handleClickToggle(list.id)}
+                idx={list.id}
+                selectedIDX={selectedIDX}
+              />
+            </div>
+          );
+        })}
+      </div>
       <Tooltip />
       <Checkbox text={"hi"} />
       <Accordion />
