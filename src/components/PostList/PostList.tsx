@@ -13,6 +13,7 @@ import Button from "../Common/Buttons/Button";
 import Tooltip from "../Common/Tooltip/Tooltip";
 import Accordion from "../Common/Accordion/Accordion";
 import Checkbox from "../Common/Checkbox/Checkbox";
+import Toggle from "../Common/Toggle/Toggle";
 //import "./post.css";
 const PostList = () => {
   const LIMIT = 7;
@@ -50,6 +51,7 @@ const PostList = () => {
 
   return (
     <section className="h-full flex flex-col justify-center w-full max-w-[1240px] py-10 ">
+      <Toggle />
       <Tooltip />
       <Checkbox text={"hi"} />
       <Accordion />
