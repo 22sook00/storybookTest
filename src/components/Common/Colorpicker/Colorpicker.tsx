@@ -1,37 +1,74 @@
-import React, {
-  Dispatch,
-  FC,
-  SetStateAction,
-  useEffect,
-  useState,
-} from "react";
+import React, { useState } from "react";
 import "react-color-palette/lib/css/styles.css";
 import ColorpickerContainer from "./ColorpickerContainer";
 import { useColor } from "../../../hook/useColor";
 
-interface colorpickerProps {
-  setCurColor: React.Dispatch<SetStateAction<string>>;
-}
-const Colorpicker: FC<colorpickerProps> = ({ setCurColor }) => {
+type ColorpickerProps = {
+  /** colorpicker 안에 커스터마이징하여 함수나 기능을 추가할 수 있다. */
+  children?: React.ReactNode;
+  /** 버튼의 크기를 설정합니다 */
+  size?: "sm" | "md" | "lg";
+  /** colorpicker 액션을 비활성화 시킵니다. */
+  disabled?: boolean;
+  /**clickable한 input가 있으며, 해당 인풋에 선택한 컬러가 표시되어 보인다. */
+  withInput?: boolean;
+  /** 아이콘만 올 수 있다 */
+  isEyedropper?: boolean;
+  /** 위의 조건이 없을 경우 버튼을 커스터마이징 할 수 있다 */
+  customStyle?: string | number;
+};
+
+const Colorpicker = ({
+  children,
+  size = "md",
+  disabled,
+  withInput,
+  isEyedropper,
+  customStyle,
+}: ColorpickerProps) => {
+  const sizeProps =
+    size === "sm"
+      ? ["w-[200px] h-7 grid-cols-[28px_1fr]  gap-2", "  text-xs"]
+      : size === "md"
+      ? ["w-[254px] h-10 grid-cols-[40px_1fr]  gap-2", " text-sm "]
+      : size === "lg"
+      ? ["w-[280px] h-12 grid-cols-[48px_1fr]  gap-3", " text-base"]
+      : [customStyle];
+
   const [color, setColor] = useColor("hex", "#a8b0c6");
   const [isOpenColor, setIsOpenColor] = useState<boolean>(false);
 
-  useEffect(() => {
-    setCurColor(color.hex);
-  }, [color.hex, setCurColor]);
   return (
     <main>
-      <section className="flex items-center gap-2 h-10 relative">
-        <div
-          className={`border rounded-lg w-10 h-full border-[${color.hex}] `}
-          style={{ background: color.hex }}
-        />
-        <div
-          onClick={() => setIsOpenColor(!isOpenColor)}
-          className="text-sm cursor-pointer border-2 border-gray-500 w-36 px-2 h-full flex items-center rounded-md "
-        >
-          {color.hex}
-        </div>
+      <section
+        className={`
+      ${sizeProps[0] ?? customStyle} 
+      grid relative`}
+      >
+        {withInput && (
+          <>
+            <div
+              className={`col-span-1 border rounded-lg  h-full border-[${color.hex}] `}
+              style={{ background: color.hex }}
+            />
+            <div
+              onClick={() => setIsOpenColor(!isOpenColor)}
+              className={`
+          ${sizeProps[1] ?? customStyle} 
+          cursor-pointer border border-gray-300 px-2 h-full flex items-center rounded-md `}
+            >
+              {color.hex}
+            </div>
+          </>
+        )}
+        {!withInput && (
+          <ColorpickerContainer
+            color={color}
+            onChange={setColor}
+            isOpenColor={isOpenColor}
+            setIsOpenColor={setIsOpenColor}
+          />
+        )}
         {isOpenColor && (
           <ColorpickerContainer
             color={color}

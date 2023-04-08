@@ -6,7 +6,7 @@ type ButtonProps = {
   /** 버튼의 생김새를 설정합니다. */
   theme?: "primary" | "secondary" | "tertiary";
   /** 버튼의 크기를 설정합니다 */
-  size?: "small" | "medium" | "big";
+  size?: "sm" | "md" | "lg";
   /** 버튼을 비활성화 시킵니다. */
   disabled?: boolean;
   /** 위의 조건이 없을 경우 버튼을 커스터마이징 할 수 있다 */
@@ -28,11 +28,11 @@ const Button = ({
   type = "button",
 }: ButtonProps) => {
   const sizeProps =
-    size === "small"
+    size === "sm"
       ? "min-w-[100px] w-fit py-3 px-2 "
-      : size === "medium"
+      : size === "md"
       ? "w-[150px] h-[43px] text-sm"
-      : size === "big"
+      : size === "lg"
       ? "w-[200px] h-[50px] text-lg"
       : customStyle;
 

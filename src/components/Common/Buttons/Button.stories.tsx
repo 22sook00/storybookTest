@@ -10,7 +10,7 @@ export default {
 };
 export const button = () => {
   const label = text("children", "BUTTON");
-  const size = select("size", ["small", "medium", "big"], "medium");
+  const size = select("size", ["sm", "md", "lg"], "md");
   const theme = select(
     "theme",
     ["primary", "secondary", "tertiary"],
@@ -38,7 +38,7 @@ button.story = {
 
 export const primaryButton = () => {
   return (
-    <Button theme="primary" size="small">
+    <Button theme="primary" size="sm">
       PRIMARY
     </Button>
   );
@@ -46,7 +46,7 @@ export const primaryButton = () => {
 
 export const secondaryButton = () => {
   return (
-    <Button theme="secondary" size="small">
+    <Button theme="secondary" size="sm">
       SECONDARY
     </Button>
   );
@@ -54,7 +54,7 @@ export const secondaryButton = () => {
 
 export const tertiaryButton = () => {
   return (
-    <Button theme="tertiary" size="small">
+    <Button theme="tertiary" size="sm">
       TERTIARY
     </Button>
   );
@@ -64,20 +64,20 @@ export const sizes = () => {
   return (
     <div className="flex flex-col gap-4">
       <section>
-        <div className="mb-2">Small</div>
-        <Button size="small" theme="primary">
+        <div className="mb-2">small</div>
+        <Button size="sm" theme="primary">
           BUTTON
         </Button>
       </section>
       <section>
         <div className="mb-2">Medium</div>
-        <Button size="medium" theme="primary">
+        <Button size="md" theme="primary">
           BUTTON
         </Button>
       </section>
       <section>
-        <div className="mb-2">Big</div>
-        <Button size="big" theme="primary">
+        <div className="mb-2">Large</div>
+        <Button size="lg" theme="primary">
           BUTTON
         </Button>
       </section>
@@ -88,7 +88,7 @@ export const sizes = () => {
 //  return (
 //    <div>
 //      <ButtonGroup>
-//        <Button size="small">
+//        <Button size="sm">
 //          <Icon icon="heart" /> LIKE
 //        </Button>
 //        <Button>
@@ -105,7 +105,7 @@ export const sizes = () => {
 //  return (
 //    <div>
 //      <ButtonGroup>
-//        <Button iconOnly size="small">
+//        <Button iconOnly size="sm">
 //          <Icon icon="heart" />
 //        </Button>
 //        <Button iconOnly>
@@ -122,18 +122,18 @@ export const disabled = () => {
   return (
     <div className="flex flex-col gap-4">
       <section>
-        <Button disabled size="small" theme="primary">
+        <Button disabled size="sm" theme="primary">
           {" "}
           PRIMARY
         </Button>
       </section>
       <section>
-        <Button disabled size="small" theme="secondary">
+        <Button disabled size="sm" theme="secondary">
           SECONDARY
         </Button>
       </section>
       <section>
-        <Button disabled size="small" theme="tertiary">
+        <Button disabled size="sm" theme="tertiary">
           TERTIARY
         </Button>
       </section>

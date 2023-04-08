@@ -21,7 +21,7 @@ const PostList = () => {
   const [curIdx, setCurIdx] = useState(1);
   const [postDatas, setPostDatas] = useState<any>([]);
   const [selectDate, setSelectDate] = useState("");
-  const [curColor, setCurColor] = useState("");
+  //const [curColor, setCurColor] = useState("");
   const [isOpenModal, setIsOpenModal] = useState(false);
   const handleOpen = () => {
     setIsOpenModal((prev) => !prev);
@@ -51,23 +51,14 @@ const PostList = () => {
   }, []);
 
   const [selectedIDX, setSelectedIDX] = useState<number | null>(0);
-  const handleClickToggle = (i: number) => {
-    if (selectedIDX === i) {
-      return setSelectedIDX(null);
-    }
-    setSelectedIDX(i);
-  };
+
   return (
     <section className="h-full flex flex-col justify-center w-full max-w-[1240px] py-10 ">
       <div className="flex flex-col gap-4">
         {Dummies.map((list) => {
           return (
             <div key={list.id}>
-              <Toggle
-                handleClickToggle={() => handleClickToggle(list.id)}
-                idx={list.id}
-                selectedIDX={selectedIDX}
-              />
+              <Toggle idx={list.id} selectedIDX={selectedIDX} />
             </div>
           );
         })}
@@ -81,12 +72,8 @@ const PostList = () => {
         <Badge text="뱃지md" color="#0ed1a4" size="md" />
         <Badge text="뱃지lg" color="#3898ff" size="lg" />
       </section>
-      <Colorpicker setCurColor={setCurColor} />
-      <Button
-        size="small"
-        theme="secondary"
-        onClick={() => setIsOpenModal(true)}
-      >
+      <Colorpicker />
+      <Button size="sm" theme="secondary" onClick={() => setIsOpenModal(true)}>
         모달열기클릭
       </Button>
       {isOpenModal && (
