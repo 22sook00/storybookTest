@@ -49,13 +49,19 @@ const Colorpicker = ({
           className={`col-span-1 border rounded-lg  h-full border-[${color.hex}] `}
           style={{ background: color.hex }}
         />
-        <div
+        <button
+          disabled={disabled}
           onClick={() => setIsOpenColor(!isOpenColor)}
           className={`${sizeProps[1] ?? customStyle} 
-              cursor-pointer border border-gray-300 px-2 h-full flex items-center rounded-md `}
+          ${
+            disabled
+              ? "cursor-not-allowed text-gray-dark border-gray-200 "
+              : "cursor-pointer border-gray-300 "
+          }
+               border px-2 h-full flex items-center rounded-md `}
         >
           {color.hex}
-        </div>
+        </button>
       </section>
       {!withInput && (
         <ColorpickerContainer

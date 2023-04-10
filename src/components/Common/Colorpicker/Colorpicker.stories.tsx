@@ -19,7 +19,7 @@ export const colorpicker = () => {
 
   return (
     <>
-      <div>Default</div>
+      <div className="mb-2">Default</div>
       <Colorpicker size={size} disabled={disabled} withInput={withInput} />
     </>
   );
@@ -48,8 +48,8 @@ export const sizes = () => {
 export const disabled = () => {
   return (
     <section>
-      <div>Disabled</div>
-      <Colorpicker disabled />
+      <div className="mb-2">Disabled</div>
+      <Colorpicker disabled withInput />
     </section>
   );
 };
