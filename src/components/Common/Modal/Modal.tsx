@@ -4,11 +4,19 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 import Line from "../../Line/Line";
 import useClickOutside from "../../../hook/useClickOutside";
 
+/**
+ * 안녕하세요 라고 보여주고 싶을 땐 `Hello` 컴포넌트를 사용하세요.
+ *
+ * - `big` 값을 `true`로 설정하면 **크게** 나타납니다.
+ * - `onHello` 와 `onBye` props로 설정하여 버튼이 클릭했을 때 호출 할 함수를 지정 할 수 있습니다.
+ */
+
 export interface ModalProps {
   title?: string;
   desc?: string;
   onClose?: () => void;
-  setIsOpenModal: React.Dispatch<SetStateAction<boolean>>;
+  isOpenModal?: boolean;
+  setIsOpenModal?: React.Dispatch<SetStateAction<boolean>>;
   children?: React.ReactNode;
   isCard?: boolean;
   icon?: React.ReactNode;
@@ -22,6 +30,7 @@ const Modal: FC<ModalProps> = ({
   desc,
   onClose,
   children,
+  isOpenModal,
   setIsOpenModal,
   isCard = false,
   blur = true,
@@ -30,7 +39,7 @@ const Modal: FC<ModalProps> = ({
 }) => {
   const modalRef = useRef<HTMLDivElement | null>(null);
   const handleClickOutside = () => {
-    setIsOpenModal(false);
+    setIsOpenModal && setIsOpenModal(false);
     document.body.classList.remove("open-modal");
   };
   useClickOutside(modalRef, handleClickOutside);
