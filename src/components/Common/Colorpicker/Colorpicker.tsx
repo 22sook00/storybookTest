@@ -8,11 +8,11 @@ type ColorpickerProps = {
   children?: React.ReactNode;
   /** 버튼의 크기를 설정합니다 */
   size?: "sm" | "md" | "lg";
-  /** colorpicker 액션을 비활성화 시킵니다. */
-  disabled?: boolean;
   /**clickable한 input가 있으며, 해당 인풋에 선택한 컬러가 표시되어 보인다. */
   withInput?: boolean;
-  /** 아이콘만 올 수 있다 */
+  /** colorpicker input 액션을 비활성화 시킵니다. */
+  disabled?: boolean;
+  /** Eyedropper 기능을 추가/제외 시킬 수 있다. */
   isEyedropper?: boolean;
   /** 위의 조건이 없을 경우 버튼을 커스터마이징 할 수 있다 */
   customStyle?: string | number;
@@ -21,9 +21,9 @@ type ColorpickerProps = {
 const Colorpicker = ({
   children,
   size = "md",
-  disabled,
-  withInput,
-  isEyedropper,
+  disabled = false,
+  withInput = true,
+  isEyedropper = true,
   customStyle,
 }: ColorpickerProps) => {
   const sizeProps =
@@ -70,6 +70,7 @@ const Colorpicker = ({
           isOpenColor={isOpenColor}
           setIsOpenColor={setIsOpenColor}
           withInput={withInput}
+          isEyedropper={isEyedropper}
           width={size === "sm" ? 160 : size === "md" ? 200 : 280}
         />
       )}
@@ -80,6 +81,7 @@ const Colorpicker = ({
           isOpenColor={isOpenColor}
           setIsOpenColor={setIsOpenColor}
           withInput={withInput}
+          isEyedropper={isEyedropper}
           width={size === "sm" ? 160 : size === "md" ? 200 : 240}
         />
       )}

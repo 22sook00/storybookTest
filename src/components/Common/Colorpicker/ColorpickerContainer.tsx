@@ -20,6 +20,7 @@ const ColorpickerContainer: FC<ColorPickerProps> = ({
   alpha = true,
   dark = false,
   setIsOpenColor,
+  isEyedropper = true,
   withInput = false,
 }) => {
   const colorpickerRef = useRef<HTMLDivElement | null>(null);
@@ -68,13 +69,14 @@ const ColorpickerContainer: FC<ColorPickerProps> = ({
           />
         )}
       </section>
-
-      <section>
-        <ColorEyedropper onChange={onChange} width={width} />
-      </section>
+      {isEyedropper && (
+        <section>
+          <ColorEyedropper onChange={onChange} width={width} />
+        </section>
+      )}
 
       <section
-        className={`flex flex-col items-center justify-center box-border w-full`}
+        className={`mt-1 flex flex-col items-center justify-center box-border w-full`}
       >
         <ColorField
           color={color}

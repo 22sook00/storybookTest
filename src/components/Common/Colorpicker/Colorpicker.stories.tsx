@@ -1,7 +1,7 @@
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import Colorpicker from "./Colorpicker";
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -9,19 +9,30 @@ export default {
   component: Colorpicker,
   decorators: [withKnobs],
 };
-// colorpicker의 props로 size 부터 표현해본다.
-// size 스토리북을 완성하면 eyedropper 를 제외한것을 구현한다.
-
+const Title = ({ title }: any) => {
+  return <div className=" capitalize mb-2 text-sm font-light">🎨 {title}</div>;
+};
 export const colorpicker = () => {
   const size = select("size", ["sm", "md", "lg"], "md");
   const disabled = boolean("disabled", false);
   const withInput = boolean("withInput", false);
+  const isEyedropper = boolean("isEyedropper", false);
 
   return (
-    <>
-      <div className="mb-2">Default</div>
-      <Colorpicker size={size} disabled={disabled} withInput={withInput} />
-    </>
+    <div className="flex gap-3 px-4">
+      <section>
+        <Title title={"Default"} />
+        <Colorpicker size={size} disabled={disabled} withInput={withInput} />
+      </section>
+      <section>
+        <Title title={"do not use eyeDropper"} />
+        <Colorpicker
+          size={size}
+          isEyedropper={isEyedropper}
+          withInput={withInput}
+        />
+      </section>
+    </div>
   );
 };
 colorpicker.story = {
@@ -29,17 +40,17 @@ colorpicker.story = {
 };
 export const sizes = () => {
   return (
-    <div className="flex gap-2 capitalize px-4">
+    <div className="flex gap-3 px-4">
       <section>
-        <div className="mb-2">small</div>
+        <Title title={"small"} />
         <Colorpicker size="sm" withInput />
       </section>
       <section>
-        <div className="mb-2">Medium</div>
+        <Title title={"medium"} />
         <Colorpicker size="md" withInput />
       </section>
       <section>
-        <div className="mb-2">Large</div>
+        <Title title={"large"} />
         <Colorpicker size="lg" withInput />
       </section>
     </div>
@@ -48,7 +59,7 @@ export const sizes = () => {
 export const disabled = () => {
   return (
     <section>
-      <div className="mb-2">Disabled</div>
+      <Title title={"disabled input"} />
       <Colorpicker disabled withInput />
     </section>
   );
@@ -56,7 +67,7 @@ export const disabled = () => {
 export const withInput = () => {
   return (
     <section>
-      <div className="mb-2">withInput</div>
+      <Title title={"with input"} />
       <Colorpicker withInput />
     </section>
   );
