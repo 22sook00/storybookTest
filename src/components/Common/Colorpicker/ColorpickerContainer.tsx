@@ -20,7 +20,7 @@ const ColorpickerContainer: FC<ColorPickerProps> = ({
   alpha = true,
   dark = false,
   setIsOpenColor,
-  isOpenColor,
+  withInput = false,
 }) => {
   const colorpickerRef = useRef<HTMLDivElement | null>(null);
   const handleClickOutside = () => {
@@ -29,11 +29,17 @@ const ColorpickerContainer: FC<ColorPickerProps> = ({
   useClickOutside(colorpickerRef, handleClickOutside);
   //padding 값 16픽셀 *2 를 더해준다.
   const colorpickerWidth =
-    width === 160 ? "w-[212px]" : width === 200 ? `w-[254px]` : "w-[292px]";
+    width === 160
+      ? "w-[200px] p-3 top-9"
+      : width === 200
+      ? `w-[254px] p-4 top-12 `
+      : "w-[280px] p-4 top-14 ";
   return (
     <div
       ref={colorpickerRef}
-      className={`${colorpickerWidth} border z-50 flex flex-col gap-2 p-4 h-fit rounded-lg shadow-sm drop-shadow-sm absolute top-12 left-0  
+      className={`${colorpickerWidth} ${
+        withInput && "absolute left-0"
+      } border z-50 flex flex-col gap-2 h-fit rounded-lg shadow-sm drop-shadow-sm 
       ${dark ? "bg-primary-dark text-gray-light" : "bg-gray-light"}`}
     >
       <section className={`flex gap-2 items-center rounded-lg `}>
@@ -64,7 +70,7 @@ const ColorpickerContainer: FC<ColorPickerProps> = ({
       </section>
 
       <section>
-        <ColorEyedropper onChange={onChange} />
+        <ColorEyedropper onChange={onChange} width={width} />
       </section>
 
       <section

@@ -39,45 +39,44 @@ const Colorpicker = ({
   const [isOpenColor, setIsOpenColor] = useState<boolean>(false);
 
   return (
-    <main>
+    <main className={`${withInput ? "relative" : "unset"}`}>
       <section
-        className={`
-      ${sizeProps[0] ?? customStyle} 
-      grid relative`}
+        className={`${sizeProps[0] ?? customStyle} ${
+          withInput ? "grid" : "hidden"
+        }`}
       >
-        {withInput && (
-          <>
-            <div
-              className={`col-span-1 border rounded-lg  h-full border-[${color.hex}] `}
-              style={{ background: color.hex }}
-            />
-            <div
-              onClick={() => setIsOpenColor(!isOpenColor)}
-              className={`
-          ${sizeProps[1] ?? customStyle} 
-          cursor-pointer border border-gray-300 px-2 h-full flex items-center rounded-md `}
-            >
-              {color.hex}
-            </div>
-          </>
-        )}
-        {!withInput && (
-          <ColorpickerContainer
-            color={color}
-            onChange={setColor}
-            isOpenColor={isOpenColor}
-            setIsOpenColor={setIsOpenColor}
-          />
-        )}
-        {isOpenColor && (
-          <ColorpickerContainer
-            color={color}
-            onChange={setColor}
-            isOpenColor={isOpenColor}
-            setIsOpenColor={setIsOpenColor}
-          />
-        )}
+        <div
+          className={`col-span-1 border rounded-lg  h-full border-[${color.hex}] `}
+          style={{ background: color.hex }}
+        />
+        <div
+          onClick={() => setIsOpenColor(!isOpenColor)}
+          className={`${sizeProps[1] ?? customStyle} 
+              cursor-pointer border border-gray-300 px-2 h-full flex items-center rounded-md `}
+        >
+          {color.hex}
+        </div>
       </section>
+      {!withInput && (
+        <ColorpickerContainer
+          color={color}
+          onChange={setColor}
+          isOpenColor={isOpenColor}
+          setIsOpenColor={setIsOpenColor}
+          withInput={withInput}
+          width={size === "sm" ? 160 : size === "md" ? 200 : 280}
+        />
+      )}
+      {isOpenColor && (
+        <ColorpickerContainer
+          color={color}
+          onChange={setColor}
+          isOpenColor={isOpenColor}
+          setIsOpenColor={setIsOpenColor}
+          withInput={withInput}
+          width={size === "sm" ? 160 : size === "md" ? 200 : 240}
+        />
+      )}
     </main>
   );
 };

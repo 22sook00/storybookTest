@@ -18,9 +18,10 @@ export const colorpicker = () => {
   const withInput = boolean("withInput", false);
 
   return (
-    <section className="w-full border flex justify-center items-center">
-      <Colorpicker size={size} disabled={disabled} withInput={withInput} />;
-    </section>
+    <>
+      <div>Default</div>
+      <Colorpicker size={size} disabled={disabled} withInput={withInput} />
+    </>
   );
 };
 colorpicker.story = {
@@ -28,18 +29,18 @@ colorpicker.story = {
 };
 export const sizes = () => {
   return (
-    <div className="flex gap-6 capitalize">
+    <div className="flex gap-2 capitalize px-4">
       <section>
         <div className="mb-2">small</div>
-        <Colorpicker size="sm" />
+        <Colorpicker size="sm" withInput />
       </section>
       <section>
         <div className="mb-2">Medium</div>
-        <Colorpicker size="md" />
+        <Colorpicker size="md" withInput />
       </section>
       <section>
         <div className="mb-2">Large</div>
-        <Colorpicker size="lg" />
+        <Colorpicker size="lg" withInput />
       </section>
     </div>
   );
@@ -47,7 +48,7 @@ export const sizes = () => {
 export const disabled = () => {
   return (
     <section>
-      <div className="mb-2">Disabled</div>
+      <div>Disabled</div>
       <Colorpicker disabled />
     </section>
   );
