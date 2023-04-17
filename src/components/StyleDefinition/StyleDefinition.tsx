@@ -1,6 +1,7 @@
 import React from "react";
 
 const StyleDefinition = () => {
+  //darkmode 구현하기
   return (
     <div className="w-full shadow border p-4">
       <h2 className="default-title">Grayscale</h2>

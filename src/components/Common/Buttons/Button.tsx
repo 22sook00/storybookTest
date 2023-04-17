@@ -29,7 +29,7 @@ const Button = ({
 }: ButtonProps) => {
   const sizeProps =
     size === "sm"
-      ? "min-w-[100px] w-fit py-3 px-2 "
+      ? "min-w-[80px] w-fit py-2 px-2 "
       : size === "md"
       ? "w-[150px] h-[43px] text-sm"
       : size === "lg"
@@ -43,7 +43,7 @@ const Button = ({
       ? `btn-secondary`
       : //tertiary 는 라인 하자
       theme === "tertiary"
-      ? `bg-white border-2 border-point-blue-dark border-dashed`
+      ? `transition all bg-white border  border-point-blue-light hover:border-point-blue-dark focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-75`
       : customStyle;
 
   return (
