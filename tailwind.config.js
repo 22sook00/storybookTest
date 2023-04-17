@@ -34,6 +34,8 @@ module.exports = {
         "gray-default": "rgb(237, 240, 243)",
         "gray-dark": "rgb(203 213 225)",
 
+        "gray-hover": "rgba(0, 0, 0, 0.5)",
+
         "primary-tint": "#868e96",
         "primary-light": "#475569",
         "primary-default": "#334155",
