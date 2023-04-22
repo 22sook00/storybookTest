@@ -1,7 +1,6 @@
 import React from "react";
 import { useTransition, animated } from "react-spring";
-
-import Button from "../components/Common/Buttons/Button";
+import Button from "../Buttons/Button";
 export type DialogProps = {
   visible: boolean;
   title?: string;

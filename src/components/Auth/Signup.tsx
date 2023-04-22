@@ -96,7 +96,6 @@ const Signup: FC<SignupProps> = ({ onClose, onClick }) => {
         title={"회원가입"}
         desc={"가입을 통해 더 다양한 서비스를 만나보세요!"}
         onClose={onClose}
-        onClick={onClick}
       >
         <form className={styles.form_container} onSubmit={handleSubmitSignup}>
           <div style={{ display: "flex", gap: 10 }}>

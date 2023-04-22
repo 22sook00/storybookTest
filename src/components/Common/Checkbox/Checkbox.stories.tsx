@@ -5,7 +5,7 @@ import Checkbox from "./Checkbox";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: "components/Checkbox",
+  title: "Common/Checkbox",
   component: Checkbox,
   control: { type: "boolean" },
   decorators: [withKnobs],

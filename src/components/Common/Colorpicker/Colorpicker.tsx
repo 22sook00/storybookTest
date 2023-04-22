@@ -3,7 +3,7 @@ import "react-color-palette/lib/css/styles.css";
 import ColorpickerContainer from "./ColorpickerContainer";
 import { useColor } from "../../../hook/useColor";
 
-type ColorpickerProps = {
+type ColorpickerType = {
   /** colorpicker 안에 커스터마이징하여 함수나 기능을 추가할 수 있다. */
   children?: React.ReactNode;
   /** 버튼의 크기를 설정합니다 */
@@ -25,7 +25,7 @@ const Colorpicker = ({
   withInput = true,
   isEyedropper = true,
   customStyle,
-}: ColorpickerProps) => {
+}: ColorpickerType) => {
   const sizeProps =
     size === "sm"
       ? ["w-[200px] h-7 grid-cols-[28px_1fr]  gap-2", "  text-xs"]
@@ -67,7 +67,6 @@ const Colorpicker = ({
         <ColorpickerContainer
           color={color}
           onChange={setColor}
-          isOpenColor={isOpenColor}
           setIsOpenColor={setIsOpenColor}
           withInput={withInput}
           isEyedropper={isEyedropper}
@@ -78,7 +77,6 @@ const Colorpicker = ({
         <ColorpickerContainer
           color={color}
           onChange={setColor}
-          isOpenColor={isOpenColor}
           setIsOpenColor={setIsOpenColor}
           withInput={withInput}
           isEyedropper={isEyedropper}

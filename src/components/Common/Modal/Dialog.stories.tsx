@@ -5,7 +5,7 @@ import { action } from "@storybook/addon-actions";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: "pages/Dialog",
+  title: "Common/Dialog",
   component: Dialog,
   control: { type: "boolean" },
   parameters: {

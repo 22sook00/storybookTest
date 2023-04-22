@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from "react";
+import React, { FC, SetStateAction, useRef, useState } from "react";
 
 import { ColorPickerProps } from "react-color-palette/lib/interfaces/ColorPicker.interface";
 import ColorHue from "./ColorHue";
