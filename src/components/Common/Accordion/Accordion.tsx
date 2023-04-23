@@ -1,64 +1,33 @@
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import React, { FC, useCallback, useState } from "react";
-import { useUncontrolled } from "./useUncontrolled";
-//import { accordionDummy } from "./accordionDummy";
+import { accordionDummy } from "./accordionDummy";
 
 interface AccordionProps {
   title: string;
-  defaultValue?: string;
   content: string;
-  //idx: number;
   isIcon?: boolean;
   customIcon?: React.ReactNode;
-  setSelected?: any;
-  selected?: any;
-  onChange?: any;
+  //i: number;
+  value: string | undefined;
+  onChange: any;
 }
 
 const Accordion: FC<AccordionProps> = ({
   title,
-  defaultValue,
   content,
-  //idx,
   isIcon = true,
   customIcon,
-  selected,
-  setSelected,
+  value,
+  onChange,
+  //i,
 }) => {
-  //const [uncontrolledValue, handleChange] = useUncontrolled({
-  //  title,
-  //  defaultValue,
-  //  onChange,
-  //});
-  const [uncontrolledValue, setUncontrolledValue] = useState(
-    defaultValue !== undefined ? defaultValue : ""
-  );
-  const handleUncontrolledChange = (val: any) => {
-    setUncontrolledValue(val);
-    //handleItemChange?.(val);
+  //const [selected, setSelected] = useState<number | null>(null);
+  const handleToggle = (title: string) => {
+    if (title === value) {
+      return onChange(null);
+    }
+    onChange(title);
   };
-  const isItemActive = (itemValue: string) =>
-    Array.isArray(uncontrolledValue)
-      ? uncontrolledValue.includes(itemValue)
-      : itemValue === uncontrolledValue;
-
-  const isActive = isItemActive(title);
-  const handleItemChange = (itemValue: string) => {
-    const nextValue = Array.isArray(uncontrolledValue)
-      ? uncontrolledValue.includes(itemValue)
-        ? uncontrolledValue.filter(
-            (selectedValue) => selectedValue !== itemValue
-          )
-        : [...uncontrolledValue, itemValue]
-      : itemValue === uncontrolledValue
-      ? null
-      : (itemValue as any);
-
-    console.log("nextValue", nextValue);
-
-    handleUncontrolledChange(nextValue);
-  };
-
   return (
     //<div className="default-flex">
     //  <div className={`w-[500px]`}>
@@ -92,14 +61,13 @@ const Accordion: FC<AccordionProps> = ({
     //    })}
     //  </div>
     //</div>
-
     <div className="bg-gray-light mb-2 p-2">
       <div
         className="flex justify-between cursor-pointer transition-all bg-gray-default rounded  p-2"
-        onClick={() => handleItemChange(title)}
+        onClick={() => handleToggle(title)}
       >
         <h4 className="font-bold">{title}</h4>
-        {isActive ? (
+        {value === title ? (
           <ChevronDownIcon className="w-5 h-5" />
         ) : (
           <ChevronUpIcon className="w-5 h-5" />
@@ -107,7 +75,7 @@ const Accordion: FC<AccordionProps> = ({
       </div>
       <div
         className={`${
-          isActive
+          value === title
             ? "h-auto max-h-[900px] animate-showmodal-bg my-3  text-primary-light"
             : "max-h-0 overflow-hidden"
         } px-3 text-sm tracking-wide `}

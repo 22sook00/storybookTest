@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import Line from "../Line/Line";
 import Image from "next/image";
 import Pagination from "../Common/Pagination/Pagination";
@@ -73,8 +73,8 @@ const PostList = () => {
             return (
               <div key={i}>
                 <Accordion
-                  //selected={selected}
-                  //setSelected={setSelected}
+                  value={selected}
+                  onChange={setSelected}
                   title={item.title}
                   content={item.content}
                 />
@@ -83,6 +83,8 @@ const PostList = () => {
           })}
         </div>
       </div>
+      {/*<Accordion />*/}
+
       <StyleDefinition />
       <section className="grid grid-cols-3 gap-4 items-center">
         <Badge text="뱃지sm" color="#fdd43d" />
