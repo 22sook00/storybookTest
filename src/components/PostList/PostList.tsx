@@ -16,6 +16,8 @@ import Checkbox from "../Common/Checkbox/Checkbox";
 import Toggle from "../Common/Toggle/Toggle";
 import { Dummies } from "./dummyList";
 //import "./post.css";
+import { accordionDummy } from "../Common/Accordion/accordionDummy";
+
 const PostList = () => {
   const LIMIT = 7;
   const [curIdx, setCurIdx] = useState(1);
@@ -51,7 +53,7 @@ const PostList = () => {
   }, []);
 
   const [selectedIDX, setSelectedIDX] = useState<number | null>(0);
-
+  const [selected, setSelected] = useState<string | undefined>();
   return (
     <section className="h-full flex flex-col justify-center w-full max-w-[1240px] py-10 ">
       <div className="flex flex-col gap-4">
@@ -65,7 +67,22 @@ const PostList = () => {
       </div>
       <Tooltip />
       <Checkbox text={"hi"} />
-      <Accordion />
+      <div className="default-flex">
+        <div className={`w-[500px]`}>
+          {accordionDummy.map((item, i) => {
+            return (
+              <div key={i}>
+                <Accordion
+                  //selected={selected}
+                  //setSelected={setSelected}
+                  title={item.title}
+                  content={item.content}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
       <StyleDefinition />
       <section className="grid grid-cols-3 gap-4 items-center">
         <Badge text="뱃지sm" color="#fdd43d" />
