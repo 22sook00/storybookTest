@@ -10,6 +10,9 @@ interface AccordionProps {
   //i: number;
   value: string | undefined;
   onChange: any;
+  disabled?: boolean;
+  animation?: "fade" | "slide";
+  desc?: string;
 }
 
 const Accordion: FC<AccordionProps> = ({
@@ -19,9 +22,10 @@ const Accordion: FC<AccordionProps> = ({
   customIcon,
   value,
   onChange,
-  //i,
+  disabled = false,
+  animation,
+  desc,
 }) => {
-  //const [selected, setSelected] = useState<number | null>(null);
   const handleToggle = (title: string) => {
     if (title === value) {
       return onChange(null);
@@ -29,56 +33,33 @@ const Accordion: FC<AccordionProps> = ({
     onChange(title);
   };
   return (
-    //<div className="default-flex">
-    //  <div className={`w-[500px]`}>
-    //    {accordionDummy.map((item, i) => {
-    //      return (
-    //        <div key={i}>
-    //          <div className="bg-gray-light mb-2 p-2">
-    //            <div
-    //              className="flex justify-between cursor-pointer transition-all bg-gray-default rounded  p-2"
-    //              onClick={() => handleToggle(i)}
-    //            >
-    //              <h4 className="font-bold">{item.title}</h4>
-    //              {selected === i ? (
-    //                <ChevronDownIcon className="w-5 h-5" />
-    //              ) : (
-    //                <ChevronUpIcon className="w-5 h-5" />
-    //              )}
-    //            </div>
-    //            <div
-    //              className={`${
-    //                selected === i
-    //                  ? "h-auto max-h-[900px] animate-showmodal-bg my-3  text-primary-light"
-    //                  : "max-h-0 overflow-hidden"
-    //              } px-3 text-sm tracking-wide `}
-    //            >
-    //              {item.content}
-    //            </div>
-    //          </div>
-    //        </div>
-    //      );
-    //    })}
-    //  </div>
-    //</div>
-    <div className="bg-gray-light mb-2 p-2">
+    <div className=" mb-2 flex-col w-full bg-gray-light p-2">
       <div
-        className="flex justify-between cursor-pointer transition-all bg-gray-default rounded  p-2"
+        className="flex justify-between cursor-pointer transition-all rounded p-2"
         onClick={() => handleToggle(title)}
       >
-        <h4 className="font-bold">{title}</h4>
-        {value === title ? (
-          <ChevronDownIcon className="w-5 h-5" />
-        ) : (
-          <ChevronUpIcon className="w-5 h-5" />
+        <div>
+          <h4 className=" font-medium">{title}</h4>
+          {desc && (
+            <p className=" font-light mt-1 text-sm text-black-light">{desc}</p>
+          )}
+        </div>
+        {isIcon && (
+          <>
+            {value === title ? (
+              <ChevronDownIcon className="w-5 h-5" />
+            ) : (
+              <ChevronUpIcon className="w-5 h-5" />
+            )}
+          </>
         )}
       </div>
       <div
         className={`${
           value === title
-            ? "h-auto max-h-[900px] animate-showmodal-bg my-3  text-primary-light"
+            ? "rounded-sm bg-white h-auto max-h-[900px] animate-showmodal-bg py-3  text-black-light"
             : "max-h-0 overflow-hidden"
-        } px-3 text-sm tracking-wide `}
+        } leading-6 px-3 text-sm tracking-wide`}
       >
         {content}
       </div>

@@ -83,14 +83,14 @@ const definitionArr = {
     },
 
     {
-      id: 19,
+      id: 22,
       title: "point-indigo-light",
       hex: "#c7d2fe",
       rgb: "rgb(199 210 254)",
     },
-    { id: 20, title: "point-indigo", hex: "#a5b4fc", rgb: "rgb(165 180 252)" },
+    { id: 23, title: "point-indigo", hex: "#a5b4fc", rgb: "rgb(165 180 252)" },
     {
-      id: 21,
+      id: 24,
       title: "point-indigo-dark",
       hex: "#6366f1",
       rgb: "rgb(99 102 241)",
@@ -101,13 +101,13 @@ const definitionArr = {
 const ColorDefinition = () => {
   //darkmode 구현하기
   return (
-    <div className="font-rubik w-full shadow border p-4">
+    <div className=" w-full shadow border p-4">
       <h2 className="default-title capitalize">primary</h2>
       <section className="p-4 flex gap-2 rounded border-2 border-dashed border-gray-default">
         {definitionArr.primary.map((list) => {
           return (
-            <div key={list.id} className=" text-xs leading-6">
-              <p className="rounded text-xs h-fit font-bold w-28 px-2 py-1 mb-1 bg-gray-default text-black-default text-center">
+            <div key={`primary-${list.id}`} className=" text-xs leading-6">
+              <p className="rounded text-xs h-fit font-semibold w-28 px-2 py-1 mb-1 bg-gray-default text-black-default text-center">
                 {list.title}
               </p>
               <div
@@ -126,8 +126,8 @@ const ColorDefinition = () => {
       <section className="p-4 flex gap-2 rounded border-2 border-dashed border-gray-default">
         {definitionArr.grayscale.map((list) => {
           return (
-            <div key={list.id} className=" text-xs leading-6">
-              <p className="rounded text-xs h-fit font-bold w-28 px-2 py-1 mb-1 bg-gray-default text-black-default text-center">
+            <div key={`grayscale-${list.id}`} className=" text-xs leading-6">
+              <p className="rounded text-xs h-fit font-semibold w-28 px-2 py-1 mb-1 bg-gray-default text-black-default text-center">
                 {list.title}
               </p>
               <div
@@ -145,8 +145,8 @@ const ColorDefinition = () => {
       <section className="p-4 grid grid-cols-6 gap-2 rounded border-2 border-dashed border-gray-default">
         {definitionArr.point.map((list) => {
           return (
-            <div key={list.id} className=" text-xs leading-6">
-              <p className="rounded text-xs h-fit font-bold w-28 px-2 py-1 mb-1 bg-gray-default text-black-default text-center">
+            <div key={`point-${list.id}`} className=" text-xs leading-6">
+              <p className="rounded text-xs h-fit font-semibold w-28 px-2 py-1 mb-1 bg-gray-default text-black-default text-center">
                 {list.title}
               </p>
               <div
