@@ -19,7 +19,7 @@ const definitionArr = {
   grayscale: [
     { id: 4, title: "gray-light", hex: "#f9f9fb", rgb: "rgb(227, 250, 252)" },
     { id: 5, title: "gray-default", hex: "#edf0f3", rgb: "rgb(237, 240, 243)" },
-    { id: 6, title: "gray-dark", hex: "#cbd5e1", rgb: "rgb(203, 213, 225)" },
+    { id: 6, title: "gray-dark", hex: "#91a1b4", rgb: "rgb(145 161 180)" },
 
     { id: 7, title: "black-light", hex: "#475569", rgb: "rgb(71, 85, 105)" },
     { id: 8, title: "black-default", hex: "#334155", rgb: "rgb(51 ,65 ,85)" },

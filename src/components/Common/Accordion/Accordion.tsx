@@ -5,7 +5,7 @@ import { accordionDummy } from "./accordionDummy";
 interface AccordionProps {
   title: string;
   content: string;
-  isIcon?: boolean;
+  //isIcon?: boolean;
   customIcon?: React.ReactNode;
   //i: number;
   value: string | undefined;
@@ -18,7 +18,7 @@ interface AccordionProps {
 const Accordion: FC<AccordionProps> = ({
   title,
   content,
-  isIcon = true,
+  //isIcon = true,
   customIcon,
   value,
   onChange,
@@ -39,12 +39,16 @@ const Accordion: FC<AccordionProps> = ({
         onClick={() => handleToggle(title)}
       >
         <div>
-          <h4 className=" font-medium">{title}</h4>
+          <h4 className=" text-black-light font-medium">{title}</h4>
           {desc && (
-            <p className=" font-light mt-1 text-sm text-black-light">{desc}</p>
+            <p className=" font-NotoSansKR font-medium mt-1 text-sm text-gray-dark">
+              {desc}
+            </p>
           )}
         </div>
-        {isIcon && (
+        {customIcon ? (
+          <>{customIcon}</>
+        ) : (
           <>
             {value === title ? (
               <ChevronDownIcon className="w-5 h-5" />
@@ -57,9 +61,10 @@ const Accordion: FC<AccordionProps> = ({
       <div
         className={`${
           value === title
-            ? "rounded-sm bg-white h-auto max-h-[900px] animate-showmodal-bg py-3  text-black-light"
-            : "max-h-0 overflow-hidden"
-        } leading-6 px-3 text-sm tracking-wide`}
+            ? `transition-all opacity-100 overflow-auto will-change-scroll rounded-sm bg-white h-auto max-h-[900px] 
+            py-3 text-black-default`
+            : "h-0 max-h-0 overflow-hidden  opacity-0"
+        }  leading-6 px-3 text-sm tracking-wide`}
       >
         {content}
       </div>

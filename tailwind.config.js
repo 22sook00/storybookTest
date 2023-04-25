@@ -39,7 +39,7 @@ module.exports = {
         //Grayscale
         "gray-light": "#f9f9fb",
         "gray-default": "rgb(237, 240, 243)",
-        "gray-dark": "rgb(203 213 225)",
+        "gray-dark": "rgb(145 161 180)", //#91a1b4
         "gray-hover": "rgba(0, 0, 0, 0.05)",
 
         "black-light": "#475569",
