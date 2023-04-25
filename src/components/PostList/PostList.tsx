@@ -7,7 +7,6 @@ import Badge from "../Common/Badge/Badge";
 import Calendar from "../Common/Calendar/Calendar";
 import { allData } from "../Common/Calendar/defaultData";
 import moment from "moment";
-import StyleDefinition from "../StyleDefinition/StyleDefinition";
 import Modal from "../Common/Modal/Modal";
 import Button from "../Common/Buttons/Button";
 import Tooltip from "../Common/Tooltip/Tooltip";
@@ -17,6 +16,7 @@ import Toggle from "../Common/Toggle/Toggle";
 import { Dummies } from "./dummyList";
 //import "./post.css";
 import { accordionDummy } from "../Common/Accordion/accordionDummy";
+import ColorDefinition from "../ColorDefinition/ColorDefinition";
 
 const PostList = () => {
   const LIMIT = 7;
@@ -85,7 +85,7 @@ const PostList = () => {
       </div>
       {/*<Accordion />*/}
 
-      <StyleDefinition />
+      <ColorDefinition />
       <section className="grid grid-cols-3 gap-4 items-center">
         <Badge text="뱃지sm" color="#fdd43d" />
         <Badge text="뱃지md" color="#0ed1a4" size="md" />

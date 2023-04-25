@@ -29,18 +29,20 @@ module.exports = {
         wiggle: "wiggle 1s ease-in-out infinite",
       },
       colors: {
+        //primary
+        "primary-tint": "rgba(227, 250, 252, 0.35)",
+        "primary-light": "#e3fafc",
+        "primary-default": "#15aabf", //rgb(21, 170, 191)
+        "primary-dark": "#1098ad", //rgb(16, 152, 173)
         //Grayscale
         "gray-light": "#f9f9fb",
         "gray-default": "rgb(237, 240, 243)",
         "gray-dark": "rgb(203 213 225)",
+        "gray-hover": "rgba(0, 0, 0, 0.05)",
 
-        "gray-hover": "rgba(0, 0, 0, 0.5)",
-
-        "primary-tint": "#868e96",
-        "primary-light": "#475569",
-        "primary-default": "#334155",
-        "primary-dark": "#1e293b",
-
+        "black-light": "#475569",
+        "black-default": "#334155",
+        "black-dark": "#1e293b",
         //tag&badge 와 같은 point color
         //*red
         "point-red-light": "rgb(253 164 175)",

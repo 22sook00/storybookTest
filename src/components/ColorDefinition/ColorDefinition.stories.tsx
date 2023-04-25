@@ -1,16 +1,16 @@
 import React from "react";
 import { withKnobs, text, select } from "@storybook/addon-knobs";
-import StyleDefinition from "./StyleDefinition";
+import ColorDefinition from "./ColorDefinition";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  title: "Common/StyleDefinition",
-  component: StyleDefinition,
+  title: "Common/ColorDefinition",
+  component: ColorDefinition,
   decorators: [withKnobs],
 };
-export const styleDefinition = () => {
-  return <StyleDefinition />;
+export const colorDefinition = () => {
+  return <ColorDefinition />;
 };
-styleDefinition.story = {
+colorDefinition.story = {
   name: "Default",
 };
