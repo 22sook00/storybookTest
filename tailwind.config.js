@@ -1,3 +1,5 @@
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 module.exports = {
   darkMode: "class",
   important: true,
@@ -37,7 +39,7 @@ module.exports = {
         //Grayscale
         "gray-light": "#f9f9fb",
         "gray-default": "rgb(237, 240, 243)",
-        "gray-dark": "rgb(203 213 225)",
+        "gray-dark": "rgb(145 161 180)", //#91a1b4
         "gray-hover": "rgba(0, 0, 0, 0.05)",
 
         "black-light": "#475569",
@@ -73,9 +75,10 @@ module.exports = {
         Roboto: ["Roboto", "serif"],
         RobotoThin: ["Roboto Regular"],
         RobotoBold: ["Roboto Bold"],
-        rubik: ["Rubik"],
-        rubikBold: ["Rubik Bold"],
+        //rubik: ["Rubik"],
+        //rubikBold: ["Rubik Bold"],
         NotoSansKR: ["Noto Sans KR", "sans-serif"],
+        rubik: ["var(--rubik)"],
       },
       screens: {
         desktop: "1120px",

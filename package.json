@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
+    "@next/font": "^13.1.2",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-knobs": "^6.4.0",
     "@storybook/jest": "^0.1.0",
@@ -23,7 +24,7 @@
     "eslint-config-next": "13.0.3",
     "heroicons": "^2.0.13",
     "moment": "^2.29.4",
-    "next": "13.0.3",
+    "next": "13.2.0",
     "react": "18.2.0",
     "react-color-palette": "^6.2.0",
     "react-dom": "18.2.0",
