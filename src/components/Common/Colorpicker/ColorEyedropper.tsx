@@ -3,8 +3,9 @@ import { toColor } from "../../../utils/toColor";
 import Button from "../Buttons/Button";
 import { SaturationProps } from "./ColorPalette";
 
-const ColorEyedropper: FC<Pick<SaturationProps, "onChange">> = ({
+const ColorEyedropper: FC<Pick<SaturationProps, "onChange" | "width">> = ({
   onChange,
+  width,
 }) => {
   const handleOpenEyedropper = () => {
     const eyeDropper = new window.EyeDropper();
@@ -27,7 +28,9 @@ const ColorEyedropper: FC<Pick<SaturationProps, "onChange">> = ({
   return (
     <div>
       <Button
-        customStyle="w-full bg-primary-light text-white font-bold"
+        customStyle={`
+        ${width === 160 ? " h-fit text-[10px]" : " h-fit py-2 text-xs"}
+        w-full bg-black-light text-white font-bold`}
         onClick={handleOpenEyedropper}
       >
         Eyedropper

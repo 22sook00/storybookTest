@@ -51,7 +51,7 @@ const Login: FC<LoginProps> = ({ onClose, onClick, setIsOpenSignup }) => {
   }, [onClose, setIsOpenSignup]);
 
   return (
-    <Modal title={"로그인"} onClose={onClose} onClick={onClick}>
+    <Modal title={"로그인"} onClose={onClose}>
       <form className={styles.form_container} onSubmit={handleLogin}>
         <Input
           name={"email"}

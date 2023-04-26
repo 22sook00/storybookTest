@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import Line from "../Line/Line";
 import Image from "next/image";
 import Pagination from "../Common/Pagination/Pagination";
@@ -7,7 +7,6 @@ import Badge from "../Common/Badge/Badge";
 import Calendar from "../Common/Calendar/Calendar";
 import { allData } from "../Common/Calendar/defaultData";
 import moment from "moment";
-import StyleDefinition from "../StyleDefinition/StyleDefinition";
 import Modal from "../Common/Modal/Modal";
 import Button from "../Common/Buttons/Button";
 import Tooltip from "../Common/Tooltip/Tooltip";
@@ -16,12 +15,15 @@ import Checkbox from "../Common/Checkbox/Checkbox";
 import Toggle from "../Common/Toggle/Toggle";
 import { Dummies } from "./dummyList";
 //import "./post.css";
+import { accordionDummy } from "../Common/Accordion/accordionDummy";
+import ColorDefinition from "../ColorDefinition/ColorDefinition";
+
 const PostList = () => {
   const LIMIT = 7;
   const [curIdx, setCurIdx] = useState(1);
   const [postDatas, setPostDatas] = useState<any>([]);
   const [selectDate, setSelectDate] = useState("");
-  const [curColor, setCurColor] = useState("");
+  //const [curColor, setCurColor] = useState("");
   const [isOpenModal, setIsOpenModal] = useState(false);
   const handleOpen = () => {
     setIsOpenModal((prev) => !prev);
@@ -51,42 +53,46 @@ const PostList = () => {
   }, []);
 
   const [selectedIDX, setSelectedIDX] = useState<number | null>(0);
-  const handleClickToggle = (i: number) => {
-    if (selectedIDX === i) {
-      return setSelectedIDX(null);
-    }
-    setSelectedIDX(i);
-  };
+  const [selected, setSelected] = useState<string | undefined>();
   return (
     <section className="h-full flex flex-col justify-center w-full max-w-[1240px] py-10 ">
       <div className="flex flex-col gap-4">
         {Dummies.map((list) => {
           return (
             <div key={list.id}>
-              <Toggle
-                handleClickToggle={() => handleClickToggle(list.id)}
-                idx={list.id}
-                selectedIDX={selectedIDX}
-              />
+              <Toggle idx={list.id} selectedIDX={selectedIDX} />
             </div>
           );
         })}
       </div>
       <Tooltip />
       <Checkbox text={"hi"} />
-      <Accordion />
-      <StyleDefinition />
+      <div className="default-flex">
+        <div className={`w-[500px]`}>
+          {accordionDummy.map((item, i) => {
+            return (
+              <div key={i}>
+                <Accordion
+                  value={selected}
+                  onChange={setSelected}
+                  title={item.title}
+                  content={item.content}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      {/*<Accordion />*/}
+
+      <ColorDefinition />
       <section className="grid grid-cols-3 gap-4 items-center">
         <Badge text="뱃지sm" color="#fdd43d" />
         <Badge text="뱃지md" color="#0ed1a4" size="md" />
         <Badge text="뱃지lg" color="#3898ff" size="lg" />
       </section>
-      <Colorpicker setCurColor={setCurColor} />
-      <Button
-        size="small"
-        theme="secondary"
-        onClick={() => setIsOpenModal(true)}
-      >
+      <Colorpicker />
+      <Button size="sm" theme="secondary" onClick={() => setIsOpenModal(true)}>
         모달열기클릭
       </Button>
       {isOpenModal && (

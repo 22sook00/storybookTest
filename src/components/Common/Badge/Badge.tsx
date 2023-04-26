@@ -11,7 +11,7 @@ const Badge: FC<TagProps> = ({
   text,
   color = "#4263EB",
   size = "sm",
-  background,
+  background = "unset",
 }) => {
   const [bgColor, setBgColor] = useState<string>("");
   const hexToRGB = (hex: string, alpha = 1) => {
@@ -44,7 +44,10 @@ const Badge: FC<TagProps> = ({
 
   return (
     <div
-      // style={{ color: color, background: background ?? bgColor }}
+      style={{
+        color: color,
+        background: bgColor === "" ? background : bgColor,
+      }}
       className={`w-fit rounded-md font-bold text-center ${badgeSize} `}
     >
       {text}

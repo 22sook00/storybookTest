@@ -3,6 +3,7 @@ import ButtonGroup from "./ButtonGroup";
 import Button from "./Button";
 import { withKnobs, text, radios, boolean } from "@storybook/addon-knobs";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: "Common/ButtonGroup",
   component: ButtonGroup,

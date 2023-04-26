@@ -59,7 +59,7 @@ const Pagination: FC<PaginationProps> = ({ curIdx, total, setCurIdx }) => {
               className={`font-semibold cursor-pointer w-6 h-6 pt-[3px] text-center text-xs
                 ${
                   curIdx === page
-                    ? " bg-primary-default text-gray-light rounded-full"
+                    ? " bg-black-default text-gray-light rounded-full"
                     : "page-numbers"
                 }
               `}
