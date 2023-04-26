@@ -11,8 +11,6 @@ type ButtonProps = {
   disabled?: boolean;
   /** 위의 조건이 없을 경우 버튼을 커스터마이징 할 수 있다 */
   customStyle?: string | number;
-  /** 아이콘만 올 수 있다 */
-  iconOnly?: boolean;
   /** 버튼의 타입을 설정합니다 */
   type?: "button" | "submit" | "reset";
 };
@@ -24,7 +22,6 @@ const Button = ({
   disabled,
   customStyle,
   onClick,
-  iconOnly,
   type = "button",
 }: ButtonProps) => {
   const sizeProps =
@@ -43,7 +40,7 @@ const Button = ({
       ? `btn-secondary`
       : //tertiary 는 라인 하자
       theme === "tertiary"
-      ? `transition all bg-white border  border-point-blue-light hover:border-point-blue-dark focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-75`
+      ? `transition all bg-white border  border-primary-default hover:border-primary-dark focus:outline-none focus:ring-2 ring-offset-2 focus:ring-cyan-200 focus:ring-opacity-75`
       : customStyle;
 
   return (

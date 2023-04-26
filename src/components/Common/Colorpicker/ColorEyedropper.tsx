@@ -30,7 +30,7 @@ const ColorEyedropper: FC<Pick<SaturationProps, "onChange" | "width">> = ({
       <Button
         customStyle={`
         ${width === 160 ? " h-fit text-[10px]" : " h-fit py-2 text-xs"}
-        w-full bg-black-light text-white font-bold`}
+        w-full  text-white font-bold`}
         onClick={handleOpenEyedropper}
       >
         Eyedropper
