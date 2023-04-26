@@ -1,6 +1,14 @@
 import { withKnobs, text, boolean, select } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 import Button from "./Button";
+import ButtonGroup from "./ButtonGroup";
+import { InformationCircleIcon, LinkIcon } from "@heroicons/react/24/solid";
+import {
+  HeartIcon,
+  KeyIcon,
+  LanguageIcon,
+  LifebuoyIcon,
+} from "@heroicons/react/24/outline";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -89,35 +97,19 @@ export const sizes = () => {
 //    <div>
 //      <ButtonGroup>
 //        <Button size="sm">
-//          <Icon icon="heart" /> LIKE
+//          <LinkIcon className="w-4" />
 //        </Button>
 //        <Button>
-//          <Icon icon="heart" /> LIKE
+//          <InformationCircleIcon className="w-4" />
 //        </Button>
-//        <Button size="big">
-//          <Icon icon="heart" /> LIKE
-//        </Button>
-//      </ButtonGroup>
-//    </div>
-//  );
-//};
-//export const iconOnly = () => {
-//  return (
-//    <div>
-//      <ButtonGroup>
-//        <Button iconOnly size="sm">
-//          <Icon icon="heart" />
-//        </Button>
-//        <Button iconOnly>
-//          <Icon icon="heart" />
-//        </Button>
-//        <Button iconOnly size="big">
-//          <Icon icon="heart" />
+//        <Button size="lg">
+//          <LifebuoyIcon className="w-4" />
 //        </Button>
 //      </ButtonGroup>
 //    </div>
 //  );
 //};
+
 export const disabled = () => {
   return (
     <div className="flex flex-col gap-4">
@@ -148,8 +140,8 @@ export const customSized = () => {
         <Button customStyle="20rem">CUSTOM WIDTH</Button>
       </div>
       <div>
-        <Button customStyle="w-[280px] h-[48px] bg-pink-400 text-pink-800">
-          FULL WIDTH
+        <Button customStyle=" bw-full h-[48px] bg-pink-400 text-pink-800 focus:ring-pink-200">
+          customStyle Button
         </Button>
       </div>
     </div>
