@@ -107,11 +107,11 @@ const ColorDefinition = () => {
         {definitionArr.primary.map((list) => {
           return (
             <div key={`primary-${list.id}`} className=" text-xs leading-6">
-              <p className="rounded text-xs h-fit font-semibold w-28 px-2 py-1 mb-1 bg-gray-default text-black-default text-center">
+              <p className="rounded text-xs h-fit font-semibold w-32 px-2 py-1 mb-1 bg-gray-default text-black-default text-center">
                 {list.title}
               </p>
               <div
-                className={`w-28 h-6 rounded`}
+                className={`w-32 h-6 rounded`}
                 style={{ background: list.hex }}
               />
               <span className="capitalize">hex</span> :
@@ -127,11 +127,11 @@ const ColorDefinition = () => {
         {definitionArr.grayscale.map((list) => {
           return (
             <div key={`grayscale-${list.id}`} className=" text-xs leading-6">
-              <p className="rounded text-xs h-fit font-semibold w-28 px-2 py-1 mb-1 bg-gray-default text-black-default text-center">
+              <p className="rounded text-xs h-fit font-semibold w-32 px-2 py-1 mb-1 bg-gray-default text-black-default text-center">
                 {list.title}
               </p>
               <div
-                className={`w-28 h-6 rounded`}
+                className={`w-32 h-6 rounded`}
                 style={{ background: list.hex }}
               />
               <span className="capitalize">hex</span> :
@@ -146,11 +146,11 @@ const ColorDefinition = () => {
         {definitionArr.point.map((list) => {
           return (
             <div key={`point-${list.id}`} className=" text-xs leading-6">
-              <p className="rounded text-xs h-fit font-semibold w-28 px-2 py-1 mb-1 bg-gray-default text-black-default text-center">
+              <p className="rounded text-xs h-fit font-semibold w-32 px-2 py-1 mb-1 bg-gray-default text-black-default text-center">
                 {list.title}
               </p>
               <div
-                className={`w-28 h-6 rounded `}
+                className={`w-32 h-6 rounded `}
                 style={{ background: list.hex }}
               />
               <span className="capitalize">hex</span> :
