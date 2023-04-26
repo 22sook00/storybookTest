@@ -17,7 +17,6 @@ import type { AppProps } from "next/app";
 // };
 export default function App({ Component, pageProps }: AppProps) {
   console.log(`
-
 ███████╗ ██████╗  ██████╗ ██╗  ██╗
 ██╔════╝██╔═══██╗██╔═══██╗██║ ██╔╝
 ███████╗██║   ██║██║   ██║█████╔╝ 
@@ -25,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
 ███████║╚██████╔╝╚██████╔╝██║  ██╗
 ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
                                 
-`)
+`);
   return (
     <Component
       // className={cls(notoSansKr.className, rubik.variable)}
