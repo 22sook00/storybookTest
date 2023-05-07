@@ -5,7 +5,6 @@ import Pagination from "../Common/Pagination/Pagination";
 import Colorpicker from "../Common/Colorpicker/Colorpicker";
 import Badge from "../Common/Badge/Badge";
 import Calendar from "../Common/Calendar/Calendar";
-import { allData } from "../Common/Calendar/defaultData";
 import moment from "moment";
 import Modal from "../Common/Modal/Modal";
 import Button from "../Common/Buttons/Button";
@@ -28,6 +27,7 @@ const PostList = () => {
   const handleOpen = () => {
     setIsOpenModal((prev) => !prev);
   };
+  //console.log("selectDate:", selectDate);
   useEffect(() => {
     //const postingByPagination = async () => {
     //	try {
@@ -113,7 +113,7 @@ const PostList = () => {
         </Modal>
       )}
       <section>
-        <Calendar allData={allData} setSelectDate={setSelectDate} />
+        <Calendar setSelectDate={setSelectDate} />
       </section>
       <Pagination total={20} setCurIdx={setCurIdx} />
     </section>
