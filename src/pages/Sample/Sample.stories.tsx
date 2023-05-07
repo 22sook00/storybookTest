@@ -26,9 +26,11 @@ export const sample = () => {
         <h1>버튼</h1>
         <div className="mb-4 default-flex gap-4 justify-start">
           <Button>확인</Button>
-          <Button theme="secondary">취소</Button>
-          <Button size="md" theme="tertiary">
-            선택불가
+          <Button size="md" theme="secondary">
+            강조 버튼
+          </Button>
+          <Button size="lg" theme="tertiary">
+            아웃라인 있는 버튼
           </Button>
         </div>
       </section>

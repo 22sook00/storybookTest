@@ -82,7 +82,7 @@ const Tooltip: FC<positionProps> = () => {
                   <>{list.item}</>
                   <div
                     style={{ opacity: 0 }}
-                    className="fixed rounded bg-primary-light text-sm default-flex flex-col text-gray-light w-fit py-1 px-4"
+                    className="fixed rounded bg-black-light text-sm default-flex flex-col text-gray-light w-fit py-1 px-4"
                     ref={tooltipRef[list.id - 1]}
                   >
                     {list.item}

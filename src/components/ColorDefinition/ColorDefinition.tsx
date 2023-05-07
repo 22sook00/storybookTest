@@ -116,7 +116,7 @@ const ColorDefinition = () => {
               />
               <span className="capitalize">hex</span> :
               <span className="uppercase"> {list.hex}</span>
-              <p>rgb : {list.rgb}</p>
+              {/*<p>rgb : {list.rgb}</p>*/}
             </div>
           );
         })}
@@ -136,7 +136,7 @@ const ColorDefinition = () => {
               />
               <span className="capitalize">hex</span> :
               <span className="uppercase"> {list.hex}</span>
-              <p>rgb : {list.rgb}</p>
+              {/*<p>rgb : {list.rgb}</p>*/}
             </div>
           );
         })}
@@ -157,7 +157,7 @@ const ColorDefinition = () => {
                 />
                 <span className="capitalize">hex</span> :
                 <span className="uppercase"> {list.hex}</span>
-                <p>rgb : {list.rgb}</p>
+                {/*<p>rgb : {list.rgb}</p>*/}
               </div>
             );
           })}

@@ -1,8 +1,10 @@
-import React from "react";
-import { useTransition, animated } from "react-spring";
+import React, { useEffect, useRef } from "react";
 import Button from "../Buttons/Button";
+import { XMarkIcon } from "@heroicons/react/24/solid";
+import useClickOutside from "../../../hook/useClickOutside";
+
 export type DialogProps = {
-  visible: boolean;
+  visible?: boolean;
   title?: string;
   description?: string;
   children?: React.ReactNode;
@@ -12,9 +14,11 @@ export type DialogProps = {
   confirmText?: string;
   onCancel?: () => void;
   onConfirm?: () => void;
+  dimmed?: boolean;
+  size?: "sm" | "md" | "lg";
+  blur?: boolean;
 };
 const Dialog = ({
-  visible,
   title,
   description,
   hideButtons,
@@ -24,35 +28,81 @@ const Dialog = ({
   children,
   onCancel,
   onConfirm,
+  dimmed = true,
+  blur = true,
+
+  size = "sm",
 }: DialogProps) => {
-  if (!visible) return null;
+  const modalRef = useRef<HTMLDivElement | null>(null);
+  const handleClickOutside = () => {
+    onCancel && onCancel();
+    document.body.classList.remove("open-modal");
+  };
+  useClickOutside(modalRef, handleClickOutside);
+  useEffect(() => {
+    document.body.classList.add("open-modal");
+  }, []);
+
+  const modalSize =
+    size === "sm"
+      ? "max-w-[400px] min-h-[200px]"
+      : size === "md"
+      ? "max-w-[620px] min-h-[400px]"
+      : "max-w-[800px] min-h-[500px]";
+
   return (
-    <>
-      <div className="fixed top-0 left-0 w-full h-full z-10 bg-gray-900/40"></div>
-      <div className="fixed top-0 left-0 w-full h-full z-20 default-flex">
-        <div className="box-border rounded-md w-[25rem] bg-white shadow-md p-[2rem]">
-          {title && (
-            <h3 className="font-bold text-black-dark text-xl mb-1">
-              {title}
-            </h3>
+    <section
+      className={`
+      ${blur && "backdrop-blur-sm"}  sm:flex-none
+      animate-showmodal-bg fixed top-0 left-0 z-50 w-full h-full overflow-auto default-flex bg-black-dark/70`}
+    >
+      <div
+        className={`
+        ${dimmed ? "sm:max-w-[unset] sm:h-full " : "sm:mx-4"}
+        ${modalSize} animate-showmodal-box flex flex-col justify-between bg-white shadow-md p-6 box-border w-full rounded-md`}
+        ref={modalRef}
+      >
+        <header className="w-full">
+          <nav className="w-full h-fit flex justify-between items-center mb-2 box-border ">
+            <h3 className="font-bold text-black-dark text-xl mb-1">{title}</h3>
+            <XMarkIcon
+              style={{ width: "20px", height: "20px", cursor: "pointer" }}
+              onClick={handleClickOutside}
+            />
+          </nav>
+          {description && (
+            <p className="text-sm text-black-light mb-2">{description}</p>
           )}
-          {description && <p className=" text-black-light">{description}</p>}
+        </header>
+        <article
+          className={`w-full mb-[15px] ${hideButtons && "min-h-[100px]"}`}
+        >
           {children}
-          {!hideButtons && (
-            <section className="default-flex mt-10 justify-end">
-              {cancellable && (
-                <Button size="sm" theme="tertiary" onClick={onCancel}>
-                  {cancelText}
-                </Button>
-              )}
-              <Button size="sm" theme="primary" onClick={onConfirm}>
-                {confirmText}
+        </article>
+        {!hideButtons && (
+          <section className="default-flex justify-end">
+            {cancellable && (
+              <Button
+                size={dimmed ? undefined : "sm"}
+                customStyle={`${dimmed && "sm:w-full sm:py-2"}`}
+                theme="tertiary"
+                onClick={handleClickOutside}
+              >
+                {cancelText}
               </Button>
-            </section>
-          )}
-        </div>
+            )}
+            <Button
+              size={dimmed ? undefined : "sm"}
+              customStyle={`${dimmed && "sm:w-full sm:py-2"}`}
+              theme="primary"
+              onClick={handleClickOutside}
+            >
+              {confirmText}
+            </Button>
+          </section>
+        )}
       </div>
-    </>
+    </section>
   );
 };
 

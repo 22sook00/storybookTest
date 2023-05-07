@@ -1,28 +1,22 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
-import Line from "../Line/Line";
-import Image from "next/image";
+import React, { useState, useEffect, useCallback } from "react";
+
 import Pagination from "../Common/Pagination/Pagination";
 import Colorpicker from "../Common/Colorpicker/Colorpicker";
 import Badge from "../Common/Badge/Badge";
 import Calendar from "../Common/Calendar/Calendar";
-import moment from "moment";
-import Modal from "../Common/Modal/Modal";
 import Button from "../Common/Buttons/Button";
 import Tooltip from "../Common/Tooltip/Tooltip";
 import Accordion from "../Common/Accordion/Accordion";
 import Checkbox from "../Common/Checkbox/Checkbox";
 import Toggle from "../Common/Toggle/Toggle";
 import { Dummies } from "./dummyList";
-//import "./post.css";
 import { accordionDummy } from "../Common/Accordion/accordionDummy";
 import ColorDefinition from "../ColorDefinition/ColorDefinition";
+import Dialog from "../Common/Modal/Dialog";
 
 const PostList = () => {
-  const LIMIT = 7;
   const [curIdx, setCurIdx] = useState(1);
-  const [postDatas, setPostDatas] = useState<any>([]);
   const [selectDate, setSelectDate] = useState("");
-  //const [curColor, setCurColor] = useState("");
   const [isOpenModal, setIsOpenModal] = useState(false);
   const handleOpen = () => {
     setIsOpenModal((prev) => !prev);
@@ -96,13 +90,14 @@ const PostList = () => {
         모달열기클릭
       </Button>
       {isOpenModal && (
-        <Modal
+        <Dialog
           title="modal test"
-          desc="모달 테스트"
-          dimmed={false}
-          size="md"
-          onClose={() => handleOpen()}
-          setIsOpenModal={setIsOpenModal}
+          blur={false}
+          description="모달 테스트"
+          confirmText={"확인"}
+          cancelText={"취소"}
+          onCancel={() => handleOpen()}
+          cancellable={true}
         >
           <h2>안녕하세요!</h2>
           <h3>나이스투밋츄!</h3>
@@ -110,7 +105,7 @@ const PostList = () => {
           <h2>안녕하세요!</h2>
           <h3>나이스투밋츄!</h3>
           <p>이숙영입니다.</p>
-        </Modal>
+        </Dialog>
       )}
       <section>
         <Calendar setSelectDate={setSelectDate} />
