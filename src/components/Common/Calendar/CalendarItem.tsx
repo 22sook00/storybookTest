@@ -35,20 +35,20 @@ const CalendarItem: FC<CalendarItemProps> = ({
       ? "text-point-red-dark"
       : idx === 6
       ? "text-point-blue-dark"
-      : "text-primary-dark";
+      : "text-black-light";
 
   const dayColorByType =
     type === "today"
       ? "bg-background-gray font-extrabold"
       : type === "focus"
-      ? "bg-primary-dark text-white"
+      ? "bg-black-dark text-white"
       : type === "not-cur-month"
       ? "text-gray-dark"
       : "";
 
   return (
     <div
-      className={`text-center text-xs flex flex-col items-center justify-center leading-12 cursor-pointer ${textColorByDay}`}
+      className={`text-center  flex flex-col items-center justify-center leading-12 cursor-pointer ${textColorByDay}`}
       onClick={() => changeMonthHandler(day)}
     >
       <div

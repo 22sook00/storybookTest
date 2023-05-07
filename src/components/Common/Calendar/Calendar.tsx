@@ -11,15 +11,16 @@ import CalendarDayOfWeek from "./CalendarDayOfWeek";
 import CalendarItem from "./CalendarItem";
 import { dayStyles } from "../../../utils/calendar";
 import { allDataProps } from "./defaultData";
+import { allData } from "../Calendar/defaultData";
 
 interface CalendarType {
-  allData: allDataProps[];
+  //allData: allDataProps[];
   size?: "sm" | "md" | "lg" | "full";
-  setSelectDate: Dispatch<SetStateAction<string>>;
+  setSelectDate?: Dispatch<SetStateAction<string>>;
 }
 
 const Calendar: FC<CalendarType> = ({
-  allData,
+  //allData,
   size = "md",
   setSelectDate,
 }) => {
@@ -47,7 +48,7 @@ const Calendar: FC<CalendarType> = ({
 
   const changeMonthHandler = (month: React.SetStateAction<moment.Moment>) => {
     setValue(month);
-    setSelectDate(moment(month as any).format("YYYY.MM.DD"));
+    setSelectDate && setSelectDate(moment(month as any).format("YYYY.MM.DD"));
   };
 
   useEffect(() => {
@@ -56,20 +57,22 @@ const Calendar: FC<CalendarType> = ({
         moment(el.createdAt).format("YYYYMMDD") === valueFormat
     );
     setList(filterValue);
-  }, [allData, valueFormat]);
+  }, [valueFormat]);
 
   const calendarSize =
     size === "sm"
-      ? "w-[300px] h-[380px]"
+      ? "w-[300px] text-xs"
       : size === "md"
-      ? "w-[400px] h-[440px]"
+      ? "w-[400px] text-sm"
       : size === "lg"
-      ? "w-[500px] h-[520px]"
+      ? "w-[500px] text-default"
       : "w-full";
+
+  //TODO date-range picker 구현해보기
   return (
     <>
       <section
-        className={`${calendarSize} rounded-lg bg-white p-6 border border-gray-100 shadow-sm drop-shadow-sm `}
+        className={`${calendarSize} h-fit rounded-lg bg-white p-6 border border-gray-100 shadow-sm drop-shadow-sm `}
       >
         <CalendarHeader changeMonthHandler={changeMonthHandler} value={value} />
         <CalendarDayOfWeek />

@@ -35,7 +35,7 @@ const CalendarHeader: FC<CalendarHeaderProps> = ({
         >
           <ChevronLeftIcon />
         </button>
-        <p className="font-bold">
+        <p className="font-semibold">
           {curYear()}.{curMonth()}
         </p>
         <button
