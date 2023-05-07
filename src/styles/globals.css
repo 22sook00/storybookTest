@@ -10,10 +10,10 @@
     @apply text-xl font-semibold text-black-default my-3;
   }
   .btn-primary {
-    @apply py-2 px-4 bg-point-blue text-white font-semibold rounded-lg shadow-md hover:bg-point-blue-dark focus:outline-none focus:ring-4 focus:ring-blue-400 focus:ring-opacity-75;
+    @apply py-2 px-4 bg-primary-default text-white font-semibold rounded-lg shadow-md hover:bg-primary-dark focus:outline-none ring-offset-2 focus:ring-2 focus:ring-cyan-200 focus:ring-opacity-75;
   }
   .btn-secondary {
-    @apply py-2 px-4 bg-point-blue-dark text-white font-semibold rounded-lg shadow-md hover:bg-point-blue focus:outline-none focus:ring-4 focus:ring-point-gr-light focus:ring-opacity-75;
+    @apply py-2 px-4 bg-primary-dark text-white font-semibold rounded-lg shadow-md hover:bg-primary-default focus:outline-none ring-offset-2 focus:ring-2 focus:ring-cyan-200 focus:ring-opacity-75;
   }
   .colorpicker-fields-element {
     @apply flex items-center gap-2 text-xs;

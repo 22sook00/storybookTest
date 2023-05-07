@@ -101,7 +101,7 @@ const definitionArr = {
 const ColorDefinition = () => {
   //darkmode 구현하기
   return (
-    <div className=" w-full shadow border p-4">
+    <div className="w-full shadow border p-4">
       <h2 className="default-title capitalize">primary</h2>
       <section className="p-4 flex gap-2 rounded border-2 border-dashed border-gray-default">
         {definitionArr.primary.map((list) => {
@@ -116,7 +116,7 @@ const ColorDefinition = () => {
               />
               <span className="capitalize">hex</span> :
               <span className="uppercase"> {list.hex}</span>
-              {/*<p>rgb : {list.rgb}</p>*/}
+              <p>rgb : {list.rgb}</p>
             </div>
           );
         })}
@@ -136,29 +136,32 @@ const ColorDefinition = () => {
               />
               <span className="capitalize">hex</span> :
               <span className="uppercase"> {list.hex}</span>
+              <p>rgb : {list.rgb}</p>
             </div>
           );
         })}
       </section>
 
       <h2 className="default-title capitalize">point</h2>
-      <section className="p-4 grid grid-cols-6 gap-2 rounded border-2 border-dashed border-gray-default">
-        {definitionArr.point.map((list) => {
-          return (
-            <div key={`point-${list.id}`} className=" text-xs leading-6">
-              <p className="rounded text-xs h-fit font-semibold w-32 px-2 py-1 mb-1 bg-gray-default text-black-default text-center">
-                {list.title}
-              </p>
-              <div
-                className={`w-32 h-6 rounded `}
-                style={{ background: list.hex }}
-              />
-              <span className="capitalize">hex</span> :
-              <span className="uppercase"> {list.hex}</span>
-              {/*<p>rgb : {list.rgb}</p>*/}
-            </div>
-          );
-        })}
+      <section className="p-4 w-full rounded border-2 border-dashed border-gray-default">
+        <div className="w-fit grid grid-cols-6  gap-2">
+          {definitionArr.point.map((list) => {
+            return (
+              <div key={`point-${list.id}`} className=" text-xs leading-6">
+                <p className="rounded text-xs h-fit font-semibold w-32 px-2 py-1 mb-1 bg-gray-default text-black-default text-center">
+                  {list.title}
+                </p>
+                <div
+                  className={`w-32 h-6 rounded `}
+                  style={{ background: list.hex }}
+                />
+                <span className="capitalize">hex</span> :
+                <span className="uppercase"> {list.hex}</span>
+                <p>rgb : {list.rgb}</p>
+              </div>
+            );
+          })}
+        </div>
       </section>
     </div>
   );

@@ -10,7 +10,7 @@ export default {
   decorators: [withKnobs],
 };
 const Title = ({ title }: any) => {
-  return <div className=" capitalize mb-2 text-sm font-light">🎨 {title}</div>;
+  return <div className=" default-title capitalize">{title}</div>;
 };
 export const colorpicker = () => {
   const size = select("size", ["sm", "md", "lg"], "md");
@@ -19,19 +19,23 @@ export const colorpicker = () => {
   const isEyedropper = boolean("isEyedropper", false);
 
   return (
-    <div className="flex gap-3 px-4">
-      <section>
-        <Title title={"Default"} />
-        <Colorpicker size={size} disabled={disabled} withInput={withInput} />
-      </section>
-      <section>
-        <Title title={"do not use eyeDropper"} />
-        <Colorpicker
-          size={size}
-          isEyedropper={isEyedropper}
-          withInput={withInput}
-        />
-      </section>
+    <div className="flex gap-8 w-full shadow border p-4">
+      <div>
+        <Title title={"primary"} />
+        <section className="p-4 w-fit flex flex-col gap-2 rounded border-2 border-dashed border-gray-default">
+          <Colorpicker size={size} disabled={disabled} withInput={withInput} />
+        </section>
+      </div>
+      <div>
+        <Title title={"without eyeDropper"} />{" "}
+        <section className="p-4 w-fit flex flex-col gap-2 rounded border-2 border-dashed border-gray-default">
+          <Colorpicker
+            size={size}
+            isEyedropper={isEyedropper}
+            withInput={withInput}
+          />
+        </section>
+      </div>
     </div>
   );
 };
@@ -41,15 +45,15 @@ colorpicker.story = {
 export const sizes = () => {
   return (
     <div className="flex gap-3 px-4">
-      <section>
+      <section className="p-4 flex flex-col gap-2 rounded border-2 border-dashed border-gray-default">
         <Title title={"small"} />
         <Colorpicker size="sm" withInput />
       </section>
-      <section>
+      <section className="p-4 flex flex-col gap-2 rounded border-2 border-dashed border-gray-default">
         <Title title={"medium"} />
         <Colorpicker size="md" withInput />
       </section>
-      <section>
+      <section className="p-4 flex flex-col gap-2 rounded border-2 border-dashed border-gray-default">
         <Title title={"large"} />
         <Colorpicker size="lg" withInput />
       </section>
@@ -58,7 +62,7 @@ export const sizes = () => {
 };
 export const disabled = () => {
   return (
-    <section>
+    <section className="p-4 flex flex-col gap-2 rounded border-2 border-dashed border-gray-default">
       <Title title={"disabled input"} />
       <Colorpicker disabled withInput />
     </section>
@@ -66,7 +70,7 @@ export const disabled = () => {
 };
 export const withInput = () => {
   return (
-    <section>
+    <section className="p-4 flex flex-col gap-2 rounded border-2 border-dashed border-gray-default">
       <Title title={"with input"} />
       <Colorpicker withInput />
     </section>
