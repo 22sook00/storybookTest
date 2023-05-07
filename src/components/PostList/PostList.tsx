@@ -115,12 +115,7 @@ const PostList = () => {
       <section>
         <Calendar allData={allData} setSelectDate={setSelectDate} />
       </section>
-      <Pagination
-        curIdx={curIdx}
-        setCurIdx={setCurIdx}
-        //total={Math.ceil(postDatas?.total / LIMIT)}
-        total={20}
-      />
+      <Pagination total={20} setCurIdx={setCurIdx} />
     </section>
   );
 };
