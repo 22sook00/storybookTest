@@ -1,7 +1,7 @@
 import React, { SetStateAction, useState } from "react";
 import "react-color-palette/lib/css/styles.css";
-import ColorpickerContainer from "../components/Common/Colorpicker/ColorpickerContainer";
-import { useColor } from "../hook/useColor";
+import ColorpickerContainer from "../../components/Common/Colorpicker/ColorpickerContainer";
+import { useColor } from "../../hook/useColor";
 
 export interface ColorpickerType {
   /** colorpicker 안에 커스터마이징하여 함수나 기능을 추가할 수 있다. */
