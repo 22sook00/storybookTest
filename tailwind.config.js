@@ -23,12 +23,22 @@ module.exports = {
           "0%, 100%": { transform: "rotate(-3deg)" },
           "50%": { transform: "rotate(3deg)" },
         },
+        loading: {
+          "0%": {
+            transform: " translateX(0)",
+          },
+          "50%": {},
+          "100%": {
+            transform: "translateX(400px)",
+          },
+        },
       },
       animation: {
         "spin-slow": "spin 5s ease infinite",
         "showmodal-bg": "showModalBg 0.3s ",
         "showmodal-box": "showModalBox 0.3s ",
         wiggle: "wiggle 1s ease-in-out infinite",
+        shimmer: "loading 2s cubic-bezier(0.5, 0, 0.25, 1) infinite",
       },
       colors: {
         //primary
@@ -75,8 +85,6 @@ module.exports = {
         Roboto: ["Roboto", "serif"],
         RobotoThin: ["Roboto Regular"],
         RobotoBold: ["Roboto Bold"],
-        //rubik: ["Rubik"],
-        //rubikBold: ["Rubik Bold"],
         NotoSansKR: ["Noto Sans KR", "sans-serif"],
         rubik: ["var(--rubik)"],
       },
@@ -91,6 +99,7 @@ module.exports = {
         "listpage-desktop": "269px minmax(1fr, 835px)",
       },
       backgroundImage: {
+        shimmerGradient: "linear-gradient(to right, #e1e9ee, #f2f8fc, #e1e9ee)",
         colorpickerDefaultGradient:
           "linear-gradient(transparent, black), linear-gradient(to right, white, transparent)",
       },
