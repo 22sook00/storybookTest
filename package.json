@@ -1,7 +1,28 @@
 {
-  "name": "storybooktest",
+  "name": "sook-next-ui",
   "version": "0.1.0",
-  "private": true,
+  "description": "☺️ the AWESOME components made in SOOK style ◟(˘³˘)◞♡",
+  "keywords": [
+    "components",
+    "storybook",
+    "design system",
+    "next.js",
+    "react",
+    "typescript",
+    "library",
+    "tailwindcss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/22sook00/storybookTest"
+  },
+  "private": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "browser": "./browser/specific/main.js",
+  "author": {
+    "name": "LeeSookyoung"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,7 +30,8 @@
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token=9d46c7fdfae1"
+    "chromatic": "npx chromatic --project-token=9d46c7fdfae1",
+    "prepare": "rm -rf dist && mkdir dist && tsc"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
