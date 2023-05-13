@@ -32,6 +32,8 @@ const ColorEyedropper: FC<Pick<SaturationProps, "onChange" | "width">> = ({
         ${width === 160 ? " h-fit text-[10px]" : " h-fit py-2 text-xs"}
         w-full  text-white font-bold`}
         onClick={handleOpenEyedropper}
+        theme="secondary"
+        isRing={false}
       >
         Eyedropper
       </Button>

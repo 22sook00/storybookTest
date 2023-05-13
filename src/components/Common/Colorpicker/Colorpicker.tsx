@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { SetStateAction, useState } from "react";
 import "react-color-palette/lib/css/styles.css";
 import ColorpickerContainer from "./ColorpickerContainer";
 import { useColor } from "../../../hook/useColor";
 
-type ColorpickerType = {
+export interface ColorpickerType {
   /** colorpicker 안에 커스터마이징하여 함수나 기능을 추가할 수 있다. */
   children?: React.ReactNode;
   /** 버튼의 크기를 설정합니다 */
@@ -16,7 +16,7 @@ type ColorpickerType = {
   isEyedropper?: boolean;
   /** 위의 조건이 없을 경우 버튼을 커스터마이징 할 수 있다 */
   customStyle?: string | number;
-};
+}
 
 const Colorpicker = ({
   children,

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 //import "./navBar.css";
 import styles from "./navBar.module.css";
 import Button from "../Common/Buttons/Button";
-import Login from "../Auth/Login";
-import Signup from "../Auth/Signup";
 
 const NavBar = () => {
   const [isOpenLogin, setIsOpenLogin] = useState(false);
@@ -24,20 +22,6 @@ const NavBar = () => {
           </Button>
         </div>
       </nav>
-
-      {isOpenLogin && (
-        <Login
-          onClick={() => setIsOpenLogin(true)}
-          onClose={() => setIsOpenLogin(false)}
-          setIsOpenSignup={setIsOpenSignup}
-        />
-      )}
-      {isOpenSignup && (
-        <Signup
-          onClick={() => setIsOpenSignup(true)}
-          onClose={() => setIsOpenSignup(false)}
-        />
-      )}
     </header>
   );
 };

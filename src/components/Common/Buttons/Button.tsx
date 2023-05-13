@@ -7,6 +7,8 @@ type ButtonProps = {
   theme?: "primary" | "secondary" | "tertiary";
   /** 버튼의 크기를 설정합니다 */
   size?: "sm" | "md" | "lg";
+  /** 버튼이 Active 되었을때 강조되는 아웃라인을 설정합니다 */
+  isRing?: boolean;
   /** 버튼을 비활성화 시킵니다. */
   disabled?: boolean;
   /** 위의 조건이 없을 경우 버튼을 커스터마이징 할 수 있다 */
@@ -19,13 +21,14 @@ const Button = ({
   children,
   theme = "primary",
   size = "sm",
+  isRing = true,
   disabled,
   customStyle,
   onClick,
   type = "button",
 }: ButtonProps) => {
   const sizeProps =
-    size === "sm"
+    !customStyle && size === "sm"
       ? "min-w-[80px] w-fit py-2 px-2 text-xs"
       : size === "md"
       ? "min-w-[100px] h-[43px] text-sm"
@@ -35,12 +38,19 @@ const Button = ({
 
   const themeProps =
     theme === "primary"
-      ? `btn-primary`
+      ? `btn-primary  ${
+          !isRing && "focus:ring-0 focus:ring-opacity-0 ring-offset-0"
+        }`
       : theme === "secondary"
-      ? `btn-secondary`
+      ? `btn-secondary ${
+          !isRing && "focus:ring-0 focus:ring-opacity-0 ring-offset-0"
+        }`
       : //tertiary 는 라인 하자
       theme === "tertiary"
-      ? `transition all bg-white border px-4  border-primary-default hover:border-primary-dark focus:outline-none focus:ring-2 ring-offset-2 focus:ring-cyan-200 focus:ring-opacity-75`
+      ? `transition all bg-white border px-4  border-primary-default hover:border-primary-dark focus:outline-none ${
+          isRing &&
+          "focus:ring-2 ring-offset-2 focus:ring-cyan-200 focus:ring-opacity-75"
+        }`
       : customStyle;
 
   return (

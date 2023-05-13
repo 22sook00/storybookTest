@@ -137,7 +137,7 @@ export const customSized = () => {
   return (
     <div className="flex flex-col gap-4">
       <div>
-        <Button customStyle="20rem">CUSTOM WIDTH</Button>
+        <Button customStyle="w-[20rem] text-sm px-2">CUSTOM WIDTH</Button>
       </div>
       <div>
         <Button customStyle=" bw-full h-[48px] bg-pink-400 text-pink-800 focus:ring-pink-200">

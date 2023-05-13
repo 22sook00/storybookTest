@@ -7,8 +7,13 @@ import ColorField from "./ColorField";
 import ColorAlpha from "./ColorAlpha";
 import ColorEyedropper from "./ColorEyedropper";
 import useClickOutside from "../../../hook/useClickOutside";
+import { ColorpickerType } from "./Colorpicker";
 
-const ColorpickerContainer: FC<ColorPickerProps> = ({
+interface ExtendColorPickerProps extends ColorpickerType, ColorPickerProps {
+  setIsOpenColor: React.Dispatch<SetStateAction<boolean>>;
+}
+
+const ColorpickerContainer: FC<ExtendColorPickerProps> = ({
   width = 200,
   height = width,
   color,
