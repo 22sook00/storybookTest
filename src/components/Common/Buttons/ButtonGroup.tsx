@@ -1,6 +1,6 @@
 export type ButtonGroupProps = {
-  direction?: "row" | "column";
-  rightAlign?: boolean;
+  direction?: string;
+  align?: string;
   gap?: number | string;
   children: React.ReactNode;
   className?: string;
@@ -8,13 +8,15 @@ export type ButtonGroupProps = {
 
 const ButtonGroup = ({
   direction,
-  rightAlign,
+  align = "flex-start",
   children,
-  gap,
+  gap = 8,
   className,
 }: ButtonGroupProps) => {
   return (
-    <div className={`flex gap-2 ${rightAlign} ${direction}`}>{children}</div>
+    <div style={{ gap: `${gap}px` }} className={`flex ${align} ${direction}`}>
+      {children}
+    </div>
   );
 };
 

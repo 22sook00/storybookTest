@@ -15,10 +15,10 @@ export interface positionDummyProps {
   item: string;
   belongTo: string;
 }
-interface positionProps {
+type positionProps = {
   children?: React.ReactNode;
   tooltip?: string;
-}
+};
 
 const Tooltip: FC<positionProps> = () => {
   const tooltipRef = useMemo(

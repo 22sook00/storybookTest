@@ -11,16 +11,15 @@ const Toggle: FC<ToggleProps> = ({ selectedIDX, idx }) => {
   return (
     <div
       className={`${
-        idx === selectedIDX ? "bg-point-blue-dark" : "bg-gray-default"
+        toggle ? "bg-point-blue-dark" : "bg-gray-default"
       } relative w-14 h-6 flex items-center  rounded-full p-1 cursor-pointer`}
       onClick={() => {
         setToggle(!toggle);
       }}
-      //onClick={handleClickToggle}
     >
       <p
         className={`${
-          toggle ? " text-gray-light left-6" : " text-primary-tint left-2 "
+          toggle ? " text-gray-light left-6" : "black-default left-2 "
         } text-[10px] font-semibold absolute transform duration-300 ease-in-out`}
       >
         {toggle ? "ON" : "OFF"}

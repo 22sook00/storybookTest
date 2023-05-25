@@ -84,7 +84,7 @@ const Dialog = ({
             {cancellable && (
               <Button
                 size={dimmed ? undefined : "sm"}
-                customStyle={`${dimmed && "sm:w-full sm:py-2"}`}
+                //customStyle={`${dimmed && "sm:w-full sm:py-2"}`}
                 theme="tertiary"
                 onClick={handleClickOutside}
               >
@@ -93,7 +93,7 @@ const Dialog = ({
             )}
             <Button
               size={dimmed ? undefined : "sm"}
-              customStyle={`${dimmed && "sm:w-full sm:py-2"}`}
+              //customStyle={`${dimmed && "sm:w-full sm:py-2"}`}
               theme="primary"
               onClick={handleClickOutside}
             >

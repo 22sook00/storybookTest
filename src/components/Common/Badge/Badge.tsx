@@ -1,11 +1,11 @@
 import React, { FC, useEffect, useState } from "react";
 
-interface TagProps {
+type TagProps = {
   text: string;
   color?: string;
   background?: string;
   size?: "sm" | "md" | "lg";
-}
+};
 
 const Badge: FC<TagProps> = ({
   text,

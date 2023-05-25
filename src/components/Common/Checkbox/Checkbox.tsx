@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 
-interface CheckboxProps {
+type CheckboxProps = {
   text?: string;
   disabled?: boolean;
   size?: "sm" | "md" | "lg";
-}
+};
 const Checkbox: FC<CheckboxProps> = ({
   text,
   disabled = false,

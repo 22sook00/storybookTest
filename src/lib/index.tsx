@@ -1,9 +1,0 @@
-export { default as Button } from "../lib/Button/Button";
-export { default as Accordion } from "../lib/Accordion/Accordion";
-export { default as Badge } from "../lib/Badge/Badge";
-export { default as Calendar } from "../lib/Calendar/Calendar";
-export { default as Checkbox } from "../lib/Checkbox/Checkbox";
-export { default as Colorpicker } from "../lib/Colorpicker/Colorpicker";
-export { default as Skeleton } from "../lib/Loadings/Skeleton";
-export { default as Dialog } from "../lib/Dialog/Dialog";
-export { default as Pagination } from "../lib/Pagination/Pagination";

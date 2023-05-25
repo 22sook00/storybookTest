@@ -2,7 +2,7 @@ import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import React, { FC, useCallback, useState } from "react";
 import { accordionDummy } from "./accordionDummy";
 
-interface AccordionProps {
+type AccordionProps = {
   title: string;
   content: string;
   //isIcon?: boolean;
@@ -13,7 +13,7 @@ interface AccordionProps {
   disabled?: boolean;
   animation?: "fade" | "slide";
   desc?: string;
-}
+};
 
 const Accordion: FC<AccordionProps> = ({
   title,

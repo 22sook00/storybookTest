@@ -13,11 +13,10 @@ import { dayStyles } from "../../../utils/calendar";
 import { allDataProps } from "./defaultData";
 import { allData } from "../Calendar/defaultData";
 
-interface CalendarType {
-  //allData: allDataProps[];
+type CalendarType = {
   size?: "sm" | "md" | "lg" | "full";
   setSelectDate?: Dispatch<SetStateAction<string>>;
-}
+};
 
 const Calendar: FC<CalendarType> = ({
   //allData,

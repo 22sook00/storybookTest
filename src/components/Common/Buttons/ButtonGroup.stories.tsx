@@ -1,7 +1,13 @@
 import React from "react";
 import ButtonGroup from "./ButtonGroup";
 import Button from "./Button";
-import { withKnobs, text, radios, boolean } from "@storybook/addon-knobs";
+import {
+  withKnobs,
+  text,
+  radios,
+  boolean,
+  number,
+} from "@storybook/addon-knobs";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
@@ -13,14 +19,18 @@ export default {
 export const buttonGroup = () => {
   const direction = radios(
     "direction",
-    { Row: "row", Column: "column" },
+    { Row: "flex-row", Column: "flex-col" },
     "row"
   );
-  const rightAlign = boolean("rightAlign", false);
-  const gap = text("gap", "0.5rem");
 
+  const gap = number("gap", 4);
+  const align = radios(
+    "align",
+    { Start: "justify-start", Center: "justify-center", End: "justify-end" },
+    "row"
+  );
   return (
-    <ButtonGroup direction={direction} rightAlign={rightAlign} gap={gap}>
+    <ButtonGroup direction={direction} align={align} gap={gap}>
       <Button theme="tertiary">취소</Button>
       <Button>확인</Button>
     </ButtonGroup>
@@ -32,8 +42,13 @@ buttonGroup.story = {
 };
 
 export const rightAlign = () => {
+  const align = radios(
+    "align",
+    { Start: "justify-start", Center: "justify-center", End: "justify-end" },
+    "row"
+  );
   return (
-    <ButtonGroup rightAlign>
+    <ButtonGroup align={align}>
       <Button theme="tertiary">취소</Button>
       <Button>확인</Button>
     </ButtonGroup>
@@ -42,7 +57,7 @@ export const rightAlign = () => {
 
 export const column = () => {
   return (
-    <ButtonGroup direction="column">
+    <ButtonGroup direction="flex-col">
       <Button>CLICK ME</Button>
       <Button>CLICK ME</Button>
     </ButtonGroup>
@@ -50,8 +65,9 @@ export const column = () => {
 };
 
 export const customGap = () => {
+  const gap = number("gap", 4);
   return (
-    <ButtonGroup gap="1rem">
+    <ButtonGroup gap={gap}>
       <Button theme="tertiary">취소</Button>
       <Button>확인</Button>
     </ButtonGroup>
@@ -59,8 +75,9 @@ export const customGap = () => {
 };
 
 export const customGapColumn = () => {
+  const gap = number("gap", 4);
   return (
-    <ButtonGroup direction="column" gap="1rem">
+    <ButtonGroup direction="flex-col" gap={gap}>
       <Button>CLICK ME</Button>
       <Button>CLICK ME</Button>
     </ButtonGroup>

@@ -1,7 +1,0 @@
-node_modules/
-src/
-public/
-.storybook/
-tsconfig.json
-tailwind.config.json
-
