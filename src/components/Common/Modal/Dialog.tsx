@@ -84,7 +84,6 @@ const Dialog = ({
             {cancellable && (
               <Button
                 size={dimmed ? undefined : "sm"}
-                //customStyle={`${dimmed && "sm:w-full sm:py-2"}`}
                 theme="tertiary"
                 onClick={handleClickOutside}
               >
