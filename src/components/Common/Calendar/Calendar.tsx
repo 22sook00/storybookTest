@@ -18,11 +18,7 @@ type CalendarType = {
   setSelectDate?: Dispatch<SetStateAction<string>>;
 };
 
-const Calendar: FC<CalendarType> = ({
-  //allData,
-  size = "md",
-  setSelectDate,
-}) => {
+const Calendar: FC<CalendarType> = ({ size = "md", setSelectDate }) => {
   const [calendar, setCalendar] = useState<any>([]);
   const [value, setValue] = useState(moment());
   const [list, setList] = useState<any[]>([]);
@@ -34,7 +30,6 @@ const Calendar: FC<CalendarType> = ({
   useEffect(() => {
     const day = startDay.clone().subtract(1, "day"); //전달 보여지는 마지막주의 하루전.
     const calendarArr = [] as any;
-    // console.log('daydaydya',day.isBefore(endDay,'day')) //true 반환.->
     while (day.isBefore(endDay, "day")) {
       calendarArr.push(
         Array(7)
