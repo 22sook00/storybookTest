@@ -48,9 +48,7 @@ const PostList = () => {
     //postingByPagination();
   }, [curIdx]);
 
-  const handleViewCount = useCallback(async (id: number) => {
-    console.log(id, "가 없음 비커즈 노 데이타");
-  }, []);
+  const handleViewCount = useCallback(async (id: number) => {}, []);
   const [selectedIDX, setSelectedIDX] = useState<number | null>(0);
   const [selected, setSelected] = useState<string | undefined>();
   return (
