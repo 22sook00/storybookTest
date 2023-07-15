@@ -50,11 +50,6 @@ const PostList = () => {
 
   const handleViewCount = useCallback(async (id: number) => {
     console.log(id, "가 없음 비커즈 노 데이타");
-    //try {
-    //	await UPDATEVIEWCOUNT({ id });
-    //} catch (err) {
-    //	console.dir(err);
-    //}
   }, []);
   const [selectedIDX, setSelectedIDX] = useState<number | null>(0);
   const [selected, setSelected] = useState<string | undefined>();
