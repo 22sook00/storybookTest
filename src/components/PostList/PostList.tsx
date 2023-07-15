@@ -23,6 +23,7 @@ import {
   Toggle as SookToggle,
   Checkbox as SookCheckbox,
 } from "sook-ui-react";
+import Input from "../Common/Input/Input";
 
 const PostList = () => {
   const [curIdx, setCurIdx] = useState(1);
